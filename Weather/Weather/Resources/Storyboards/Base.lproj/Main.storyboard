@@ -10,46 +10,48 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Forecast View Controller-->
+        <!--Forecast-->
         <scene sceneID="PYR-Bc-7pg">
             <objects>
                 <viewController id="jY5-Wc-MqI" customClass="ForecastViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VtJ-7r-Jom">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="1" blue="0.097714149764354996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="wiz-b7-VQj"/>
                     </view>
-                    <navigationItem key="navigationItem" id="OIc-IU-tWe"/>
+                    <navigationItem key="navigationItem" title="Forecast" id="OIc-IU-tWe"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g8V-sh-9J0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1398" y="700"/>
         </scene>
-        <!--Actual Weather View Controller-->
+        <!--Today-->
         <scene sceneID="SpP-aO-NEi">
             <objects>
                 <viewController id="3ly-y5-xYQ" customClass="ActualWeatherViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nuo-ux-WEN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.6705882353" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="7M7-XH-5K0"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Xcy-G1-dgo"/>
+                    <navigationItem key="navigationItem" title="Today" id="Xcy-G1-dgo"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0cv-jY-tGn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1398" y="-197"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Weather Tab Bar Controller-->
         <scene sceneID="UYX-hj-JRA">
             <objects>
-                <tabBarController id="hYf-wp-KJn" sceneMemberID="viewController">
+                <tabBarController id="hYf-wp-KJn" customClass="WeatherTabBarController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fHL-Uu-AuV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.18431372549019609" green="0.56862745098039214" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="6hd-Jx-h3k" kind="relationship" relationship="viewControllers" id="ERN-r6-VPG"/>
@@ -60,11 +62,13 @@
             </objects>
             <point key="canvasLocation" x="-492" y="160"/>
         </scene>
-        <!--Item 1-->
+        <!--Today-->
         <scene sceneID="vOK-w5-jCn">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6hd-Jx-h3k" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="5I2-et-e9h"/>
+                    <tabBarItem key="tabBarItem" title="Today" image="ClearSkyInactiveSmall" selectedImage="ClearSkyActiveSmall" id="5I2-et-e9h" customClass="TabBarItem" customModule="Weather" customModuleProvider="target">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-1"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DXI-bs-lxy">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -79,11 +83,13 @@
             </objects>
             <point key="canvasLocation" x="631" y="-197"/>
         </scene>
-        <!--Item 2-->
+        <!--Forecast-->
         <scene sceneID="LqO-55-HOg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lAJ-Lh-Bje" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="yhP-Jv-AWu"/>
+                    <tabBarItem key="tabBarItem" title="Forecast" image="ShowerRainInactiveSmall" selectedImage="ShowerRainActiveSmall" id="yhP-Jv-AWu" customClass="TabBarItem" customModule="Weather" customModuleProvider="target">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-1"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Rq6-M1-28Y">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -99,4 +105,10 @@
             <point key="canvasLocation" x="593" y="701"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ClearSkyActiveSmall" width="25" height="25"/>
+        <image name="ClearSkyInactiveSmall" width="25" height="25"/>
+        <image name="ShowerRainActiveSmall" width="25" height="25"/>
+        <image name="ShowerRainInactiveSmall" width="25" height="25"/>
+    </resources>
 </document>

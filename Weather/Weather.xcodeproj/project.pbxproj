@@ -18,6 +18,9 @@
 		5BD99D0B21F390FE00249542 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD99D0A21F390FE00249542 /* WeatherViewController.swift */; };
 		5BD99D0D21F3915300249542 /* ActualWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD99D0C21F3915300249542 /* ActualWeatherViewController.swift */; };
 		5BD99D1121F3918400249542 /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD99D1021F3918400249542 /* ForecastViewController.swift */; };
+		5BD99D1421F39F5500249542 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD99D1321F39F5500249542 /* TabBarItem.swift */; };
+		5BD99D1721F39F7900249542 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD99D1621F39F7900249542 /* Colors.swift */; };
+		5BD99D1921F3A5BD00249542 /* WeatherTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD99D1821F3A5BD00249542 /* WeatherTabBarController.swift */; };
 		ACB736961215FC0CA8F184D6 /* Pods_Weather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB24CD9B7612F89BC404EB4B /* Pods_Weather.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +61,9 @@
 		5BD99D0A21F390FE00249542 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		5BD99D0C21F3915300249542 /* ActualWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualWeatherViewController.swift; sourceTree = "<group>"; };
 		5BD99D1021F3918400249542 /* ForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift; sourceTree = "<group>"; };
+		5BD99D1321F39F5500249542 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		5BD99D1621F39F7900249542 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		5BD99D1821F3A5BD00249542 /* WeatherTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTabBarController.swift; sourceTree = "<group>"; };
 		93346BE29D72A8259B8B827E /* Pods-WeatherUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherUITests/Pods-WeatherUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A02D272CC31C9DA106D4787F /* Pods-WeatherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherTests/Pods-WeatherTests.release.xcconfig"; sourceTree = "<group>"; };
 		B072C6F1498945ECC27CCF1A /* Pods-Weather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Weather/Pods-Weather.debug.xcconfig"; sourceTree = "<group>"; };
@@ -157,6 +163,7 @@
 		5BD99D0221F38D5600249542 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5BD99D1221F39F3E00249542 /* TabBarItem */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -166,7 +173,8 @@
 			children = (
 				5BD99D0F21F3916B00249542 /* Forecast */,
 				5BD99D0E21F3916300249542 /* ActualWeather */,
-				5BD99D0C21F3915300249542 /* ActualWeatherViewController.swift */,
+				5BD99D0A21F390FE00249542 /* WeatherViewController.swift */,
+				5BD99D1821F3A5BD00249542 /* WeatherTabBarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -174,6 +182,7 @@
 		5BD99D0421F38E1E00249542 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5BD99D1521F39F6F00249542 /* Colors */,
 				5BD99D0721F38E8900249542 /* Fonts */,
 				5BD99D0621F38E4500249542 /* Storyboards */,
 				5B55028621F37FDE0015EA72 /* Assets.xcassets */,
@@ -223,7 +232,7 @@
 		5BD99D0E21F3916300249542 /* ActualWeather */ = {
 			isa = PBXGroup;
 			children = (
-				5BD99D0A21F390FE00249542 /* WeatherViewController.swift */,
+				5BD99D0C21F3915300249542 /* ActualWeatherViewController.swift */,
 			);
 			path = ActualWeather;
 			sourceTree = "<group>";
@@ -234,6 +243,22 @@
 				5BD99D1021F3918400249542 /* ForecastViewController.swift */,
 			);
 			path = Forecast;
+			sourceTree = "<group>";
+		};
+		5BD99D1221F39F3E00249542 /* TabBarItem */ = {
+			isa = PBXGroup;
+			children = (
+				5BD99D1321F39F5500249542 /* TabBarItem.swift */,
+			);
+			path = TabBarItem;
+			sourceTree = "<group>";
+		};
+		5BD99D1521F39F6F00249542 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				5BD99D1621F39F7900249542 /* Colors.swift */,
+			);
+			path = Colors;
 			sourceTree = "<group>";
 		};
 		726C01A4011B0610476A4035 /* Frameworks */ = {
@@ -469,7 +494,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BD99D0B21F390FE00249542 /* WeatherViewController.swift in Sources */,
+				5BD99D1721F39F7900249542 /* Colors.swift in Sources */,
 				5BD99D1121F3918400249542 /* ForecastViewController.swift in Sources */,
+				5BD99D1421F39F5500249542 /* TabBarItem.swift in Sources */,
+				5BD99D1921F3A5BD00249542 /* WeatherTabBarController.swift in Sources */,
 				5BD99D0D21F3915300249542 /* ActualWeatherViewController.swift in Sources */,
 				5B55028021F37FDD0015EA72 /* AppDelegate.swift in Sources */,
 			);
