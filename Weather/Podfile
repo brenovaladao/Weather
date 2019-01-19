@@ -1,0 +1,21 @@
+#Podfile
+#
+
+platform :ios, '11.0'
+
+target 'Weather' do
+  use_frameworks!
+
+  pod 'SwiftLint', '~> 0.27.0'
+
+
+  target 'WeatherTests' do
+    inherit! :search_paths
+
+  end
+
+  target 'WeatherUITests' do
+    inherit! :search_paths
+
+  end
+end
