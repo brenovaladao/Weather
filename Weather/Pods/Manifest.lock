@@ -1,15 +1,15 @@
 PODS:
   - Alamofire (4.8.1)
-  - Moya (11.0.2):
-    - Moya/Core (= 11.0.2)
-  - Moya/Core (11.0.2):
+  - Moya (12.0.1):
+    - Moya/Core (= 12.0.1)
+  - Moya/Core (12.0.1):
     - Alamofire (~> 4.1)
-    - Result (~> 3.0)
-  - Result (3.2.4)
+    - Result (~> 4.0)
+  - Result (4.1.0)
   - SwiftLint (0.27.0)
 
 DEPENDENCIES:
-  - Moya (~> 11.0.2)
+  - Moya (~> 12.0.1)
   - SwiftLint (~> 0.27.0)
 
 SPEC REPOS:
@@ -21,10 +21,10 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
-  Moya: a725035953bc1c0eb1be505ab903984501d82440
-  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
 
-PODFILE CHECKSUM: c6e0b960dc22363f0aa03698892a11d03a25568d
+PODFILE CHECKSUM: 89a6cf968f960741bdcf72d3ad55a7383c0fd401
 
 COCOAPODS: 1.6.0.beta.2
