@@ -1,6 +1,3 @@
-#Podfile
-#
-
 platform :ios, '11.0'
 
 target 'Weather' do
@@ -8,6 +5,8 @@ target 'Weather' do
 
   pod 'SwiftLint', '~> 0.27.0'
 
+  # Networking
+  pod 'Moya', '~> 11.0.2'
 
   target 'WeatherTests' do
     inherit! :search_paths
