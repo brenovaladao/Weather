@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		1B6A5CA5B1AD649C2D73482D /* Pods_WeatherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25317B149F75388499D12BE3 /* Pods_WeatherTests.framework */; };
 		39264C6C9159A182012381B0 /* Pods_WeatherUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1B37315BDF1F73818CF0872 /* Pods_WeatherUITests.framework */; };
+		5B3C51BF21F66B5200D64B92 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C51BE21F66B5200D64B92 /* WeatherService.swift */; };
+		5B3C51C121F66B6D00D64B92 /* WeatherProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C51C021F66B6D00D64B92 /* WeatherProvider.swift */; };
+		5B3C51C421F66D7600D64B92 /* AppDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C51C321F66D7600D64B92 /* AppDefaults.swift */; };
+		5B3C51C921F670F900D64B92 /* Service+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C51C821F670F900D64B92 /* Service+Util.swift */; };
 		5B55028021F37FDD0015EA72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B55027F21F37FDD0015EA72 /* AppDelegate.swift */; };
 		5B55028521F37FDD0015EA72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B55028321F37FDD0015EA72 /* Main.storyboard */; };
 		5B55028721F37FDE0015EA72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B55028621F37FDE0015EA72 /* Assets.xcassets */; };
@@ -45,6 +49,10 @@
 		0BC207054D08A8C8805E9454 /* Pods-WeatherUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherUITests/Pods-WeatherUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		18E1E39CF0F2BBA18D2C8EF8 /* Pods-Weather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather.release.xcconfig"; path = "Pods/Target Support Files/Pods-Weather/Pods-Weather.release.xcconfig"; sourceTree = "<group>"; };
 		25317B149F75388499D12BE3 /* Pods_WeatherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B3C51BE21F66B5200D64B92 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeatherService.swift; path = "New Group/WeatherService.swift"; sourceTree = "<group>"; };
+		5B3C51C021F66B6D00D64B92 /* WeatherProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherProvider.swift; sourceTree = "<group>"; };
+		5B3C51C321F66D7600D64B92 /* AppDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDefaults.swift; sourceTree = "<group>"; };
+		5B3C51C821F670F900D64B92 /* Service+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Service+Util.swift"; sourceTree = "<group>"; };
 		5B4F791C849B24E512F020A0 /* Pods-WeatherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherTests/Pods-WeatherTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5B55027C21F37FDD0015EA72 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B55027F21F37FDD0015EA72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +107,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B3C51BD21F66AFB00D64B92 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				5B3C51C021F66B6D00D64B92 /* WeatherProvider.swift */,
+				5B3C51BE21F66B5200D64B92 /* WeatherService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		5B3C51C221F66D6500D64B92 /* AppDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				5B3C51C321F66D7600D64B92 /* AppDefaults.swift */,
+			);
+			path = AppDefaults;
+			sourceTree = "<group>";
+		};
+		5B3C51C721F670EA00D64B92 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				5B3C51C821F670F900D64B92 /* Service+Util.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		5B55027321F37FDC0015EA72 = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +159,7 @@
 			children = (
 				5B55027F21F37FDD0015EA72 /* AppDelegate.swift */,
 				5BD99D0821F3909C00249542 /* Util */,
+				5B3C51BD21F66AFB00D64B92 /* Networking */,
 				5BD99D0121F38D4B00249542 /* Models */,
 				5BD99D0521F38E3600249542 /* Presenters */,
 				5BD99D0321F38D7500249542 /* Controllers */,
@@ -182,6 +216,7 @@
 		5BD99D0421F38E1E00249542 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5B3C51C221F66D6500D64B92 /* AppDefaults */,
 				5BD99D1521F39F6F00249542 /* Colors */,
 				5BD99D0721F38E8900249542 /* Fonts */,
 				5BD99D0621F38E4500249542 /* Storyboards */,
@@ -217,6 +252,7 @@
 		5BD99D0821F3909C00249542 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				5B3C51C721F670EA00D64B92 /* Service */,
 				5BD99D0921F390D900249542 /* Logger */,
 			);
 			path = Util;
@@ -520,10 +556,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B3C51BF21F66B5200D64B92 /* WeatherService.swift in Sources */,
 				5BD99D0B21F390FE00249542 /* WeatherViewController.swift in Sources */,
 				5BD99D1721F39F7900249542 /* Colors.swift in Sources */,
 				5BD99D1121F3918400249542 /* ForecastViewController.swift in Sources */,
+				5B3C51C121F66B6D00D64B92 /* WeatherProvider.swift in Sources */,
+				5B3C51C421F66D7600D64B92 /* AppDefaults.swift in Sources */,
 				5BD99D1421F39F5500249542 /* TabBarItem.swift in Sources */,
+				5B3C51C921F670F900D64B92 /* Service+Util.swift in Sources */,
 				5BD99D1921F3A5BD00249542 /* WeatherTabBarController.swift in Sources */,
 				5BD99D0D21F3915300249542 /* ActualWeatherViewController.swift in Sources */,
 				5B55028021F37FDD0015EA72 /* AppDelegate.swift in Sources */,
