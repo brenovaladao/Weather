@@ -24,8 +24,8 @@ struct WeatherMainInfo: Codable {
         case temperatureMax = "temp_max"
         case humidity
         case pressure
-        case seaLevel
-        case groundLevel
+        case seaLevel = "sea_level"
+        case groundLevel = "grnd_level"
     }
     
     init(from decoder: Decoder) throws {
@@ -39,6 +39,5 @@ struct WeatherMainInfo: Codable {
         pressure = try container.decodeIfPresent(Double.self, forKey: .pressure)
         seaLevel = try container.decodeIfPresent(Double.self, forKey: .seaLevel)
         groundLevel = try container.decodeIfPresent(Double.self, forKey: .groundLevel)
-
     }
 }
