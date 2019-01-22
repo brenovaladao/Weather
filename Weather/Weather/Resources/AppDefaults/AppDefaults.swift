@@ -14,4 +14,6 @@ struct AppDefaults {
     
     static var openWeatherApiKey: String { return "ab99b0bfe9d4b0630fd40969abdd6009" }
     
+    static var errorDomain: String { return "com.brenovinicios.error.domain" }
+    
 }

@@ -25,6 +25,7 @@
 		5B3C51E721F6A6AE00D64B92 /* ActualWeatherPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C51E621F6A6AE00D64B92 /* ActualWeatherPresenter.swift */; };
 		5B3C51EA21F6A6C800D64B92 /* ActualWeatherProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C51E921F6A6C800D64B92 /* ActualWeatherProtocol.swift */; };
 		5B3C51EC21F6A8AF00D64B92 /* MoyaLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C51EB21F6A8AF00D64B92 /* MoyaLoggerPlugin.swift */; };
+		5B3C51EE21F6AD4B00D64B92 /* WeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C51ED21F6AD4B00D64B92 /* WeatherTests.swift */; };
 		5B55028021F37FDD0015EA72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B55027F21F37FDD0015EA72 /* AppDelegate.swift */; };
 		5B55028521F37FDD0015EA72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B55028321F37FDD0015EA72 /* Main.storyboard */; };
 		5B55028721F37FDE0015EA72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B55028621F37FDE0015EA72 /* Assets.xcassets */; };
@@ -76,6 +77,7 @@
 		5B3C51E621F6A6AE00D64B92 /* ActualWeatherPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualWeatherPresenter.swift; sourceTree = "<group>"; };
 		5B3C51E921F6A6C800D64B92 /* ActualWeatherProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualWeatherProtocol.swift; sourceTree = "<group>"; };
 		5B3C51EB21F6A8AF00D64B92 /* MoyaLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggerPlugin.swift; sourceTree = "<group>"; };
+		5B3C51ED21F6AD4B00D64B92 /* WeatherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherTests.swift; sourceTree = "<group>"; };
 		5B4F791C849B24E512F020A0 /* Pods-WeatherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherTests/Pods-WeatherTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5B55027C21F37FDD0015EA72 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B55027F21F37FDD0015EA72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 		5B55029321F37FDE0015EA72 /* WeatherTests */ = {
 			isa = PBXGroup;
 			children = (
+				5B3C51ED21F6AD4B00D64B92 /* WeatherTests.swift */,
 				5B55029621F37FDE0015EA72 /* Info.plist */,
 			);
 			path = WeatherTests;
@@ -612,6 +615,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B3C51EE21F6AD4B00D64B92 /* WeatherTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

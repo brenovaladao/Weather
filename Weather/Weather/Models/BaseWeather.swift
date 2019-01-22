@@ -9,11 +9,11 @@
 import Foundation
 
 struct BaseWeather: Codable {
-    
+
+    let code: Int?
     let id: Int?
     let base: String?
     let name: String?
-    let code: Int?
     let date: Date?
     let weather: [Weather]?
     let weatherMainInfo: WeatherMainInfo?
@@ -25,10 +25,10 @@ struct BaseWeather: Codable {
     let wind: Wind?
     
     private enum JsonKeys: String, CodingKey {
+        case code = "cod"
         case id
         case base
         case name
-        case code = "cod"
         case date = "dt"
         case weather
         case weatherMainInfo = "main"
@@ -38,17 +38,22 @@ struct BaseWeather: Codable {
         case rain
         case clouds
         case wind
-
     }
     
     init(from decoder: Decoder) throws {
         
         let container = try decoder.container(keyedBy: JsonKeys.self)
 
+        code = try container.decodeIfPresent(Int.self, forKey: .code)
+        
+        // Verify valid status code
+        if let code = code, code != 200 {
+            throw NSError(domain: AppDefaults.errorDomain, code: code, userInfo: nil)
+        }
+        
         id = try container.decodeIfPresent(Int.self, forKey: .id)
         base = try container.decodeIfPresent(String.self, forKey: .base)
         name = try container.decodeIfPresent(String.self, forKey: .name)
-        code = try container.decodeIfPresent(Int.self, forKey: .code)
         weather = try container.decodeIfPresent([Weather].self, forKey: .weather)
         weatherMainInfo = try container.decodeIfPresent(WeatherMainInfo.self, forKey: .weatherMainInfo)
         coordinate = try container.decodeIfPresent(Coordinate.self, forKey: .coordinate)

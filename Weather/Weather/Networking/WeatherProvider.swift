@@ -28,8 +28,8 @@ extension WeatherProvider: TargetType {
         case .getActualWeather:
             return "weather"
             
-        case .getForecast(let lat, let lon):
-            return "forecast?lat=\(lat)&lon=\(lon)&appid=\(AppDefaults.openWeatherApiKey)"
+        case .getForecast:
+            return "forecast"
         }
     }
     
@@ -51,6 +51,7 @@ extension WeatherProvider: TargetType {
              .getForecast(let lat, let lon):
             return .requestParameters(parameters: ["lat": lat,
                                                    "lon": lon,
+                                                   "units": "metric",
                                                    "appid": AppDefaults.openWeatherApiKey],
                                       encoding: URLEncoding(destination: .queryString))
         }
