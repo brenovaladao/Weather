@@ -13,8 +13,8 @@ class TabBarItem: UITabBarItem {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.setTitleTextAttributes([.foregroundColor: UIColor.tabBarDeselectedColor], for: .normal)
-        self.setTitleTextAttributes([.foregroundColor: UIColor.tabBarSelectedColor], for: .selected)
+        self.setTitleTextAttributes([.foregroundColor: UIColor.weatherDarkGray], for: .normal)
+        self.setTitleTextAttributes([.foregroundColor: UIColor.weatherBlue], for: .selected)
         
     }
 }
