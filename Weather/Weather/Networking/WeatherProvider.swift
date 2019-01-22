@@ -8,7 +8,7 @@
 
 import Moya
 
-let weatherProvider = MoyaProvider<WeatherProvider>()
+let weatherProvider = MoyaProvider<WeatherProvider>(plugins: [LoggerPlugin()])
 
 public enum WeatherProvider {
     
@@ -25,11 +25,11 @@ extension WeatherProvider: TargetType {
     
     public var path: String {
         switch self {
-        case .getActualWeather(let lat, let lon):
-            return "weather?lat=\(lat)&lon=\(lon)&appid=\(AppDefaults.openWeatherApiKey)"
+        case .getActualWeather:
+            return "weather"
             
-        case .getForecast(let lat, let lon):
-            return "forecast?lat=\(lat)&lon=\(lon)&appid=\(AppDefaults.openWeatherApiKey)"
+        case .getForecast:
+            return "forecast"
         }
     }
     
@@ -47,9 +47,13 @@ extension WeatherProvider: TargetType {
     
     public var task: Task {
         switch self {
-        case .getActualWeather,
-             .getForecast:
-            return .requestPlain
+        case .getActualWeather(let lat, let lon),
+             .getForecast(let lat, let lon):
+            return .requestParameters(parameters: ["lat": lat,
+                                                   "lon": lon,
+                                                   "units": "metric",
+                                                   "appid": AppDefaults.openWeatherApiKey],
+                                      encoding: URLEncoding(destination: .queryString))
         }
     }
     

@@ -12,7 +12,7 @@ import Result
 
 struct ServiceUtil {
     
-    public static func request<T: Codable, K: TargetType>(provider: MoyaProvider<K>, target: K, type: T.Type, _ completion: @escaping(_ object: T?, _ error: Error?) -> Void) {
+    public static func request<T: Codable, K: TargetType>(provider: MoyaProvider<K>, target: K, type: T.Type, _ completion: @escaping(T?, Error?) -> Void) {
         
         provider.request(target) { (result) in
             parseResult(result: result, type: type, completion)
@@ -27,7 +27,7 @@ struct ServiceUtil {
                 let object = try response.map(T.self)
                 completion(object, nil)
             } catch {
-                print("\(error)")
+                completion(nil, error)
             }
         case let .failure(error):
             completion(nil, error)
