@@ -8,4 +8,22 @@
 
 class ForecastViewController: WeatherViewController {
     
+    private var presenter: ForecastPresenter!
+    
+    // MARK: Life cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        presenter = ForecastPresenter(forecastView: self)
+    }
+    
+    @IBAction func doRequest(_ sender: Any) {
+        presenter.getForecastData()
+    }
+    
+}
+
+// MARK: - ForecastProtocol
+extension ForecastViewController: ForecastProtocol {
+    
 }
