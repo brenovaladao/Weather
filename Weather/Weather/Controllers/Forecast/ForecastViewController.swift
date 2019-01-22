@@ -6,9 +6,14 @@
 //  Copyright © 2019 breno.vinicios. All rights reserved.
 //
 
+import UIKit
+
 class ForecastViewController: WeatherViewController {
     
     private var presenter: ForecastPresenter!
+    @IBOutlet weak var label1: UILabel!
+    @IBOutlet weak var label2: UILabel!
+    @IBOutlet weak var label3: UILabel!
     
     // MARK: Life cycle
     override func viewDidLoad() {

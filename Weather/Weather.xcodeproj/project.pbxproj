@@ -31,6 +31,7 @@
 		5B3C51F621F6B32D00D64B92 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C51F521F6B32D00D64B92 /* City.swift */; };
 		5B3C51FB21F6B9C800D64B92 /* ForecastPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C51FA21F6B9C800D64B92 /* ForecastPresenter.swift */; };
 		5B3C51FD21F6BA1100D64B92 /* ForecastProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C51FC21F6BA1100D64B92 /* ForecastProtocol.swift */; };
+		5B4C40E721F7BDCE00ADF651 /* UIFont+Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4C40E621F7BDCE00ADF651 /* UIFont+Weather.swift */; };
 		5B55028021F37FDD0015EA72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B55027F21F37FDD0015EA72 /* AppDelegate.swift */; };
 		5B55028521F37FDD0015EA72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B55028321F37FDD0015EA72 /* Main.storyboard */; };
 		5B55028721F37FDE0015EA72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B55028621F37FDE0015EA72 /* Assets.xcassets */; };
@@ -88,6 +89,10 @@
 		5B3C51F521F6B32D00D64B92 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		5B3C51FA21F6B9C800D64B92 /* ForecastPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastPresenter.swift; sourceTree = "<group>"; };
 		5B3C51FC21F6BA1100D64B92 /* ForecastProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastProtocol.swift; sourceTree = "<group>"; };
+		5B4C40E321F7BC2400ADF651 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		5B4C40E421F7BC2400ADF651 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		5B4C40E521F7BC2400ADF651 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		5B4C40E621F7BDCE00ADF651 /* UIFont+Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Weather.swift"; sourceTree = "<group>"; };
 		5B4F791C849B24E512F020A0 /* Pods-WeatherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherTests/Pods-WeatherTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5B55027C21F37FDD0015EA72 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B55027F21F37FDD0015EA72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -312,6 +317,10 @@
 		5BD99D0721F38E8900249542 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				5B4C40E621F7BDCE00ADF651 /* UIFont+Weather.swift */,
+				5B4C40E521F7BC2400ADF651 /* Montserrat-Light.ttf */,
+				5B4C40E321F7BC2400ADF651 /* Montserrat-Medium.ttf */,
+				5B4C40E421F7BC2400ADF651 /* Montserrat-SemiBold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -616,6 +625,7 @@
 				5BD99D1721F39F7900249542 /* Colors.swift in Sources */,
 				5B3C51FD21F6BA1100D64B92 /* ForecastProtocol.swift in Sources */,
 				5BD99D1121F3918400249542 /* ForecastViewController.swift in Sources */,
+				5B4C40E721F7BDCE00ADF651 /* UIFont+Weather.swift in Sources */,
 				5B3C51F221F6B23B00D64B92 /* BaseForecast.swift in Sources */,
 				5B3C51C121F66B6D00D64B92 /* WeatherProvider.swift in Sources */,
 				5B3C51F421F6B2F200D64B92 /* Forecast.swift in Sources */,
