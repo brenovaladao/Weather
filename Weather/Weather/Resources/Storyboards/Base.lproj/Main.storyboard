@@ -33,7 +33,20 @@
                     <view key="view" contentMode="scaleToFill" id="nuo-ux-WEN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNb-Jb-BMG">
+                                <rect key="frame" x="164.5" y="318.5" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="doRequest:" destination="3ly-y5-xYQ" eventType="touchUpInside" id="aeH-nx-Y71"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xNb-Jb-BMG" firstAttribute="centerX" secondItem="nuo-ux-WEN" secondAttribute="centerX" id="BGr-Oi-YL2"/>
+                            <constraint firstItem="xNb-Jb-BMG" firstAttribute="centerY" secondItem="nuo-ux-WEN" secondAttribute="centerY" id="grZ-cO-lHu"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7M7-XH-5K0"/>
                     </view>
                     <navigationItem key="navigationItem" title="Today" id="Xcy-G1-dgo"/>

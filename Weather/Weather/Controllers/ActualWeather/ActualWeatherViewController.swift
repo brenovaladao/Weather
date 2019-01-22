@@ -8,4 +8,22 @@
 
 class ActualWeatherViewController: WeatherViewController {
     
+    private var presenter: ActualWeatherPresenter!
+    
+    // MARK: Life cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        presenter = ActualWeatherPresenter(actualWeatherView: self)
+    }
+    
+    @IBAction func doRequest(_ sender: Any) {
+        presenter.getActualWeatherData()
+    }
+    
+}
+
+// MARK: - ActualWeatherProtocol
+extension ActualWeatherViewController: ActualWeatherProtocol {
+    
 }

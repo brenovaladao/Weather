@@ -9,17 +9,13 @@
 import Foundation
 import Moya
 
-import Foundation
-
 class WeatherService {
     
-    static func getActualWeather(for lat: Double, lon: Double, _ completion: () -> Void) {
-//
-//        let target = WeatherProvider.getActualWeather(lat: String(lat), lon: String(lon))
-//
-//        ServiceUtil.request(provider: weatherProvider, target: target, type: <#T##(Decodable & Encodable).Protocol#>) { (response, error) in
-//
-//        }
+    static func getActualWeather(for lat: Double, lon: Double, _ completion: @escaping (BaseWeather?, Error?) -> Void) {
+
+        let target = WeatherProvider.getActualWeather(lat: String(lat), lon: String(lon))
+
+        ServiceUtil.request(provider: weatherProvider, target: target, type: BaseWeather.self, completion)
     }
 
     static func getForecast(for lat: Double, lon: Double, _ completion: () -> Void) {
