@@ -44,6 +44,7 @@
 		5B55028721F37FDE0015EA72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B55028621F37FDE0015EA72 /* Assets.xcassets */; };
 		5B55028A21F37FDE0015EA72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B55028821F37FDE0015EA72 /* LaunchScreen.storyboard */; };
 		5B5502A021F37FDE0015EA72 /* WeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B55029F21F37FDE0015EA72 /* WeatherUITests.swift */; };
+		5BCC5B4321F9071D00FA2ADA /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC5B4221F9071D00FA2ADA /* Images.swift */; };
 		5BD99D0B21F390FE00249542 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD99D0A21F390FE00249542 /* WeatherViewController.swift */; };
 		5BD99D0D21F3915300249542 /* ActualWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD99D0C21F3915300249542 /* ActualWeatherViewController.swift */; };
 		5BD99D1121F3918400249542 /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD99D1021F3918400249542 /* ForecastViewController.swift */; };
@@ -119,6 +120,7 @@
 		5B55029B21F37FDE0015EA72 /* WeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B55029F21F37FDE0015EA72 /* WeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherUITests.swift; sourceTree = "<group>"; };
 		5B5502A121F37FDE0015EA72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BCC5B4221F9071D00FA2ADA /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		5BD99D0A21F390FE00249542 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		5BD99D0C21F3915300249542 /* ActualWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualWeatherViewController.swift; sourceTree = "<group>"; };
 		5BD99D1021F3918400249542 /* ForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift; sourceTree = "<group>"; };
@@ -286,6 +288,14 @@
 			path = WeatherUITests;
 			sourceTree = "<group>";
 		};
+		5BCC5B4121F9070400FA2ADA /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				5BCC5B4221F9071D00FA2ADA /* Images.swift */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		5BD99D0121F38D4B00249542 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -333,6 +343,7 @@
 				5B3C51C221F66D6500D64B92 /* AppDefaults */,
 				5BD99D1521F39F6F00249542 /* Colors */,
 				5B4C40EF21F7E00300ADF651 /* Strings */,
+				5BCC5B4121F9070400FA2ADA /* Images */,
 				5BD99D0721F38E8900249542 /* Fonts */,
 				5BD99D0621F38E4500249542 /* Storyboards */,
 				5B55028621F37FDE0015EA72 /* Assets.xcassets */,
@@ -676,6 +687,7 @@
 				5B3C51F221F6B23B00D64B92 /* BaseForecast.swift in Sources */,
 				5B3C51C121F66B6D00D64B92 /* WeatherProvider.swift in Sources */,
 				5B3C51F421F6B2F200D64B92 /* Forecast.swift in Sources */,
+				5BCC5B4321F9071D00FA2ADA /* Images.swift in Sources */,
 				5B4C40F721F7E71400ADF651 /* ActualWeatherViewObject.swift in Sources */,
 				5B4C40E921F7C7E900ADF651 /* WeatherNavigationController.swift in Sources */,
 				5B3C51C421F66D7600D64B92 /* AppDefaults.swift in Sources */,
