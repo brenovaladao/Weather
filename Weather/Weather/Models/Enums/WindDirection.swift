@@ -24,4 +24,5 @@ enum WindDirection: String, CaseIterable {
         let index = Int((degrees + 22.5) / 45.0) & (WindDirection.allCases.count - 1)
         return WindDirection.allCases[index].rawValue
     }
+    
 }

@@ -70,4 +70,5 @@ enum WeatherImageType: String, CaseIterable {
             return UIImage(named: "MistNightBig")
         }
     }
+    
 }

@@ -34,4 +34,5 @@ struct City: Codable {
         country = try container.decodeIfPresent(String.self, forKey: .country)
         population = try container.decodeIfPresent(Int.self, forKey: .population)
     }
+    
 }

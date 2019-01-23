@@ -10,10 +10,10 @@ import Foundation
 
 struct AppDefaults {
     
-    static var baseURL: URL { return URL(string: "https://api.openweathermap.org/data/2.5")! }
+    static let baseURL = URL(string: "https://api.openweathermap.org/data/2.5")!
     
-    static var openWeatherApiKey: String { return "ab99b0bfe9d4b0630fd40969abdd6009" }
+    static let openWeatherApiKey = "ab99b0bfe9d4b0630fd40969abdd6009"
     
-    static var errorDomain: String { return "com.brenovinicios.error.domain" }
+    static let errorDomain = "com.brenovinicios.error.domain"
     
 }

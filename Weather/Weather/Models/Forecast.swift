@@ -45,4 +45,5 @@ struct Forecast: Codable {
             date = nil
         }
     }
+    
 }

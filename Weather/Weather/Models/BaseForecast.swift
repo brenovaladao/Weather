@@ -45,4 +45,5 @@ struct BaseForecast: Codable {
         forecasts = try container.decodeIfPresent([Forecast].self, forKey: .forecasts)
         city = try container.decodeIfPresent(City.self, forKey: .city)
     }
+    
 }

@@ -52,7 +52,7 @@ extension ActualWeatherPresenter {
     private func bindEmptyViewObject() {
         
         let humity = ActualWeatherInfoItem(image: UIImage(named: "HumiditySmall"), title: "-- %")
-        let precipitation = ActualWeatherInfoItem(image: UIImage(named: "PrecipitationSmall"), title:  "-- mm")
+        let precipitation = ActualWeatherInfoItem(image: UIImage(named: "PrecipitationSmall"), title: "-- mm")
         let pressure = ActualWeatherInfoItem(image: UIImage(named: "PressureSmall"), title: "-- hPa")
         let windSpeed = ActualWeatherInfoItem(image: UIImage(named: "WindSmall"), title: "-- km/h")
         let windDirection = ActualWeatherInfoItem(image: UIImage(named: "WindDirectionSmall"), title: "--")

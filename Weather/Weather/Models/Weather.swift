@@ -32,6 +32,7 @@ struct Weather: Codable {
         description = try container.decodeIfPresent(String.self, forKey: .description)
         icon = try container.decodeIfPresent(String.self, forKey: .icon)
     }
+    
 }
 
 // MARK: - Getters

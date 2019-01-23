@@ -25,6 +25,7 @@ struct Wind: Codable {
         speed = try container.decodeIfPresent(Double.self, forKey: .speed)
         degrees = try container.decodeIfPresent(Double.self, forKey: .degrees)
     }
+    
 }
 
 // MARK: - Getters

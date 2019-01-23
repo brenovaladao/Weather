@@ -22,4 +22,5 @@ struct Clouds: Codable {
         
         all = try container.decodeIfPresent(Double.self, forKey: .all)
     }
+    
 }
