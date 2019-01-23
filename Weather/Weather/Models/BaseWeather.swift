@@ -44,11 +44,10 @@ struct BaseWeather: Codable {
         
         let container = try decoder.container(keyedBy: JsonKeys.self)
 
-        code = try container.decodeIfPresent(Int.self, forKey: .code)
-        
-        // Verify valid status code
-        if let code = code, code != 200 {
-            throw NSError(domain: AppDefaults.errorDomain, code: code, userInfo: nil)
+        do {
+            code = try container.decodeIfPresent(Int.self, forKey: .code)
+        } catch {
+            throw NSError.actualWeatherRequestError
         }
         
         id = try container.decodeIfPresent(Int.self, forKey: .id)

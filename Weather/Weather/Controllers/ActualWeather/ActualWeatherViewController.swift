@@ -44,12 +44,17 @@ class ActualWeatherViewController: WeatherViewController {
         cityCountryLabel.font = UIFont.appFontMedium(ofSize: 18)
         cityCountryLabel.textColor = .weatherDarkGray
 
-        temperatureDescriptionLabel.font = UIFont.appFontMedium(ofSize: 24)
+        temperatureDescriptionLabel.font = UIFont.appFontMedium(ofSize: 20)
         temperatureDescriptionLabel.textColor = .weatherBlue
 
         shareWeatherInfoButton.titleLabel?.font = UIFont.appFontMedium(ofSize: 18)
         shareWeatherInfoButton.setTitleColor(.weatherOrange, for: .normal)
         shareWeatherInfoButton.setTitle(String.shareButtonTitle, for: .normal)
+    }
+
+    #warning("remove this button and delete in storyboard file")
+    @IBAction func buttonAction(_ sender: Any) {
+        presenter.getActualWeatherData()
     }
     
 }
@@ -70,7 +75,7 @@ extension ActualWeatherViewController: ActualWeatherProtocol {
     }
     
     func handleError(_ error: Error) {
-        
+        genericErrorHandler(error)
     }
     
     func setLoading(_ loading: Bool) {
