@@ -48,12 +48,7 @@ class WeatherInfoView: UIView {
         titleLabel.textColor = UIColor.darkGray
     }
     
-    public func setup(with viewObject: ActualWeatherInfoItem?) {
-        guard let viewObject = viewObject else {
-            #warning("empty state")
-            titleLabel.text = " -- "
-            return
-        }
+    public func setup(with viewObject: ActualWeatherInfoItem) {
         iconImageView.image = viewObject.image
         titleLabel.text = viewObject.title
     }
