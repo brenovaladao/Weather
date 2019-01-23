@@ -8,4 +8,10 @@
 
 protocol ActualWeatherProtocol: class {
     
+    func bind(viewObject: ActualWeatherViewObject)
+    
+    func handleError(_ error: Error)
+    
+    func setLoading(_ loading: Bool)
+    
 }

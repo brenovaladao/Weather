@@ -26,3 +26,13 @@ struct Wind: Codable {
         degrees = try container.decodeIfPresent(Double.self, forKey: .degrees)
     }
 }
+
+// MARK: - Getters
+extension Wind {
+    
+    var direction: String? {
+        guard let degrees = degrees else { return nil }
+        return WindDirection.value(by: degrees)
+    }
+    
+}

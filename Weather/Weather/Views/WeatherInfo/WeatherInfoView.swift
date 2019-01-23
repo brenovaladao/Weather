@@ -15,7 +15,6 @@ class WeatherInfoView: UIView {
     @IBOutlet private weak var titleLabel: UILabel!
     
     // MARK: - Load view from xib
-    private var customView: UIView?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,11 +27,12 @@ class WeatherInfoView: UIView {
     }
     
     private func loadXib() {
-        self.customView = Bundle.main.loadNibNamed("WeatherInfoView", owner: self, options: nil)?.first as? UIView
-        guard self.customView != nil else { return }
-        self.customView?.frame = self.bounds
-        self.customView?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.addSubview(self.customView!)
+        guard let customView = Bundle.main.loadNibNamed("WeatherInfoView", owner: self, options: nil)?.first as? UIView else {
+            return
+        }
+        customView.frame = self.bounds
+        customView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.addSubview(customView)
     }
     
     override func awakeFromNib() {
@@ -48,7 +48,14 @@ class WeatherInfoView: UIView {
         titleLabel.textColor = UIColor.darkGray
     }
     
-    public func setup() {
-        
+    public func setup(with viewObject: ActualWeatherInfoItem?) {
+        guard let viewObject = viewObject else {
+            #warning("empty state")
+            titleLabel.text = " -- "
+            return
+        }
+        iconImageView.image = viewObject.image
+        titleLabel.text = viewObject.title
     }
+    
 }
