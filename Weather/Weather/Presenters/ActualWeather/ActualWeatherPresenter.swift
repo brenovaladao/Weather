@@ -12,6 +12,8 @@ class ActualWeatherPresenter {
     
     private var actualWeatherView: ActualWeatherProtocol?
     
+    private var isLoadingData = false
+    
     init(actualWeatherView: ActualWeatherProtocol) {
         self.actualWeatherView = actualWeatherView
         self.bindEmptyViewObject()
@@ -24,13 +26,17 @@ extension ActualWeatherPresenter {
 
     public func getActualWeatherData() {
         
+        guard !isLoadingData else { return }
+        isLoadingData = true
+        
         let lat = -22.9081223
         let lon = -47.0778804
         
         WeatherService.getActualWeather(for: lat, lon: lon) { [weak self] (baseWeather, error) in
             guard let self = self else { return }
+            self.isLoadingData = false
             if let error = error {
-                // TODO: Handle error
+                self.actualWeatherView?.handleError(error)
                 return
             }
             guard let viewObject = self.createViewObject(from: baseWeather) else {
