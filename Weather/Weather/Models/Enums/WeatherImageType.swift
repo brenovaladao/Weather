@@ -33,41 +33,41 @@ enum WeatherImageType: String, CaseIterable {
     var image: UIImage? {
         switch self {
         case .clearSkyD:
-            return UIImage(named: "ClearSkyDayBig")
+            return .clearSkyDayBig
         case .clearSkyN:
-            return UIImage(named: "ClearSkyNightBig")
+            return .clearSkyNightBig
         case .fewCloudsD:
-            return UIImage(named: "FewCloudsDayBig")
+            return .fewCloudsDayBig
         case .fewCloudsN:
-            return UIImage(named: "FewCloudsNightBig")
+            return .fewCloudsNightBig
         case .scatteredCloudsD:
-            return UIImage(named: "ScatteredCloudsDayBig")
+            return .scatteredCloudsDayBig
         case .scatteredCloudsN:
-            return UIImage(named: "ScatteredCloudsNightBig")
+            return .scatteredCloudsNightBig
         case .brokenCloudsD:
-            return UIImage(named: "BrokenCloudsDayBig")
+            return .brokenCloudsDayBig
         case .brokenCloudsN:
-            return UIImage(named: "BrokenCloudsNightBig")
+            return .brokenCloudsNightBig
         case .showerRainD:
-            return UIImage(named: "ShowerRainDayBig")
+            return .showerRainDayBig
         case .showerRainN:
-            return UIImage(named: "ShowerRainNightBig")
+            return .showerRainNightBig
         case .rainD:
-            return UIImage(named: "RainDayBig")
+            return .rainDayBig
         case .rainN:
-            return UIImage(named: "RainNightBig")
+            return .rainNightBig
         case .thunderstormD:
-            return UIImage(named: "ThunderstormDayBig")
+            return .thunderstormDayBig
         case .thunderstormN:
-            return UIImage(named: "ThunderstormNightBig")
+            return .thunderstormNightBig
         case .snowD:
-            return UIImage(named: "SnowDayBig")
+            return .snowDayBig
         case .snowN:
-            return UIImage(named: "SnowNightBig")
+            return .snowNightBig
         case .mistD:
-            return UIImage(named: "MistDayBig")
+            return .mistDayBig
         case .mistN:
-            return UIImage(named: "MistNightBig")
+            return .mistNightBig
         }
     }
     

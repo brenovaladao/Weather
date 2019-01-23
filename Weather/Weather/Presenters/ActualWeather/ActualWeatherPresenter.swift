@@ -51,11 +51,11 @@ extension ActualWeatherPresenter {
     
     private func bindEmptyViewObject() {
         
-        let humity = ActualWeatherInfoItem(image: UIImage(named: "HumiditySmall"), title: "-- %")
-        let precipitation = ActualWeatherInfoItem(image: UIImage(named: "PrecipitationSmall"), title: "-- mm")
-        let pressure = ActualWeatherInfoItem(image: UIImage(named: "PressureSmall"), title: "-- hPa")
-        let windSpeed = ActualWeatherInfoItem(image: UIImage(named: "WindSmall"), title: "-- km/h")
-        let windDirection = ActualWeatherInfoItem(image: UIImage(named: "WindDirectionSmall"), title: "--")
+        let humity = ActualWeatherInfoItem(image: .humiditySmall, title: "-- %")
+        let precipitation = ActualWeatherInfoItem(image: .precipitationSmall, title: "-- mm")
+        let pressure = ActualWeatherInfoItem(image: .pressureSmall, title: "-- hPa")
+        let windSpeed = ActualWeatherInfoItem(image: .windSmall, title: "-- km/h")
+        let windDirection = ActualWeatherInfoItem(image: .windDirectionSmall, title: "--")
 
         let emptyViewObject = ActualWeatherViewObject(weatherImage: WeatherImageType.clearSkyD.image,
                                                      locationText: " -- ",
@@ -113,7 +113,7 @@ extension ActualWeatherPresenter {
     
     private func getHumidityInfoItem(_ baseWeather: BaseWeather) -> ActualWeatherInfoItem {
         let humitidy = baseWeather.weatherMainInfo?.humidity ?? 0.0
-        return ActualWeatherInfoItem(image: UIImage(named: "HumiditySmall"), title: String(format: "%.1f%%", humitidy))
+        return ActualWeatherInfoItem(image: .humiditySmall, title: String(format: "%.1f%%", humitidy))
     }
 
     private func getPrecipitationInfoItem(_ baseWeather: BaseWeather) -> ActualWeatherInfoItem {
@@ -123,21 +123,21 @@ extension ActualWeatherPresenter {
         } else if let rain1h = baseWeather.rain?.oneHour {
             precipitation = rain1h
         }
-        return ActualWeatherInfoItem(image: UIImage(named: "PrecipitationSmall"), title: String(format: "%.1f mm", precipitation))
+        return ActualWeatherInfoItem(image: .precipitationSmall, title: String(format: "%.1f mm", precipitation))
     }
 
     private func getPressureInfoItem(_ baseWeather: BaseWeather) -> ActualWeatherInfoItem {
         let pressure = baseWeather.weatherMainInfo?.pressure ?? 0.0
-        return ActualWeatherInfoItem(image: UIImage(named: "PressureSmall"), title: String(format: "%.0f hPa", pressure))
+        return ActualWeatherInfoItem(image: .pressureSmall, title: String(format: "%.0f hPa", pressure))
     }
 
     private func getWindSpeedInfoItem(_ baseWeather: BaseWeather) -> ActualWeatherInfoItem {
         let wind = baseWeather.wind?.speed ?? 0.0
-        return ActualWeatherInfoItem(image: UIImage(named: "WindSmall"), title: String(format: "%.0f km/h", wind))
+        return ActualWeatherInfoItem(image: .windSmall, title: String(format: "%.0f km/h", wind))
     }
 
     private func getWindDirectionInfoItem(_ baseWeather: BaseWeather) -> ActualWeatherInfoItem {
         let windDirection = baseWeather.wind?.direction ?? " -- "
-        return ActualWeatherInfoItem(image: UIImage(named: "WindDirectionSmall"), title: windDirection)
+        return ActualWeatherInfoItem(image: .windDirectionSmall, title: windDirection)
     }
 }
