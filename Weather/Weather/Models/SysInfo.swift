@@ -47,4 +47,5 @@ struct SysInfo: Codable {
             sunset = nil
         }
     }
+    
 }

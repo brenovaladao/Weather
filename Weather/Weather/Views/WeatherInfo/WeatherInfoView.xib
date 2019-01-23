@@ -21,10 +21,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5C6-Vc-1JT">
-                    <rect key="frame" x="9.5" y="5.5" width="78.5" height="52.5"/>
+                    <rect key="frame" x="9.5" y="4.5" width="78.5" height="54.5"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0A7-Y5-Nc8">
-                            <rect key="frame" x="0.0" y="32" width="78.5" height="20.5"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="0A7-Y5-Nc8">
+                            <rect key="frame" x="0.0" y="34" width="78.5" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -42,12 +42,12 @@
                         <constraint firstAttribute="trailing" secondItem="0A7-Y5-Nc8" secondAttribute="trailing" id="m08-9P-0mZ"/>
                         <constraint firstItem="0A7-Y5-Nc8" firstAttribute="centerX" secondItem="5C6-Vc-1JT" secondAttribute="centerX" id="m37-cH-mDx"/>
                         <constraint firstItem="0A7-Y5-Nc8" firstAttribute="leading" secondItem="5C6-Vc-1JT" secondAttribute="leading" id="mKp-W1-A6t"/>
-                        <constraint firstItem="0A7-Y5-Nc8" firstAttribute="top" secondItem="mTJ-Me-xC8" secondAttribute="bottom" constant="2" id="oSd-ZB-JxH"/>
+                        <constraint firstItem="0A7-Y5-Nc8" firstAttribute="top" secondItem="mTJ-Me-xC8" secondAttribute="bottom" constant="4" id="oSd-ZB-JxH"/>
                         <constraint firstAttribute="bottom" secondItem="0A7-Y5-Nc8" secondAttribute="bottom" id="yGK-Y1-SMJ"/>
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="5C6-Vc-1JT" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" id="2Vd-pO-ma3"/>
                 <constraint firstItem="5C6-Vc-1JT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" id="A5b-fU-bTh"/>

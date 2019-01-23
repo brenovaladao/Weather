@@ -25,4 +25,5 @@ struct Snow: Codable {
         oneHour = try container.decodeIfPresent(Double.self, forKey: .oneHour)
         threeHours = try container.decodeIfPresent(Double.self, forKey: .threeHours)
     }
+    
 }

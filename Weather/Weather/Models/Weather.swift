@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Weather: Codable {
     
@@ -31,4 +32,15 @@ struct Weather: Codable {
         description = try container.decodeIfPresent(String.self, forKey: .description)
         icon = try container.decodeIfPresent(String.self, forKey: .icon)
     }
+    
+}
+
+// MARK: - Getters
+extension Weather {
+    
+    var weatherImage: UIImage? {
+        guard let icon = icon else { return nil }
+        return WeatherImageType.allCases.filter({ $0.rawValue == icon }).first?.image
+    }
+    
 }

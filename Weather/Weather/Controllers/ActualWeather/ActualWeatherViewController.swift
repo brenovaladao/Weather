@@ -17,7 +17,7 @@ class ActualWeatherViewController: WeatherViewController {
     @IBOutlet private weak var cityCountryLabel: UILabel!
     @IBOutlet private weak var temperatureDescriptionLabel: UILabel!
     @IBOutlet private weak var humityWeatherInfoView: WeatherInfoView!
-    @IBOutlet private weak var preciptationWeatherInfoView: WeatherInfoView!
+    @IBOutlet private weak var precipitationWeatherInfoView: WeatherInfoView!
     @IBOutlet private weak var pressureWeatherInfoView: WeatherInfoView!
     @IBOutlet private weak var windWeatherInfoView: WeatherInfoView!
     @IBOutlet private weak var windDirectionWeatherInfoView: WeatherInfoView!
@@ -28,13 +28,16 @@ class ActualWeatherViewController: WeatherViewController {
         super.viewDidLoad()
         
         presenter = ActualWeatherPresenter(actualWeatherView: self)
+        presenter.getActualWeatherData()
         setupViews()
     }
     
-    @IBAction func doRequest(_ sender: Any) {
-        presenter.getActualWeatherData()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        presenter.updateActualWeatherData()
     }
-    
+
     // MARK: Views Setup
     
     private func setupViews() {
@@ -48,10 +51,31 @@ class ActualWeatherViewController: WeatherViewController {
         shareWeatherInfoButton.setTitleColor(.weatherOrange, for: .normal)
         shareWeatherInfoButton.setTitle(String.shareButtonTitle, for: .normal)
     }
+    
 }
 
 // MARK: - ActualWeatherProtocol
 extension ActualWeatherViewController: ActualWeatherProtocol {
+    
+    func bind(viewObject: ActualWeatherViewObject) {
+        
+        weatherImageView.image = viewObject.weatherImage
+        cityCountryLabel.text = viewObject.locationText
+        temperatureDescriptionLabel.text = viewObject.temperatureDescriptionText
+        humityWeatherInfoView.setup(with: viewObject.humity)
+        precipitationWeatherInfoView.setup(with: viewObject.precipitation)
+        pressureWeatherInfoView.setup(with: viewObject.pressure)
+        windWeatherInfoView.setup(with: viewObject.wind)
+        windDirectionWeatherInfoView.setup(with: viewObject.windDirection)
+    }
+    
+    func handleError(_ error: Error) {
+        
+    }
+    
+    func setLoading(_ loading: Bool) {
+        
+    }
     
 }
 
@@ -61,4 +85,5 @@ extension ActualWeatherViewController {
     @IBAction private func shareWeatherInfoButtonAction() {
         
     }
+    
 }

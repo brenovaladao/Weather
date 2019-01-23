@@ -69,4 +69,5 @@ struct BaseWeather: Codable {
             date = nil
         }
     }
+    
 }

@@ -25,4 +25,15 @@ struct Wind: Codable {
         speed = try container.decodeIfPresent(Double.self, forKey: .speed)
         degrees = try container.decodeIfPresent(Double.self, forKey: .degrees)
     }
+    
+}
+
+// MARK: - Getters
+extension Wind {
+    
+    var direction: String? {
+        guard let degrees = degrees else { return nil }
+        return WindDirection.value(by: degrees)
+    }
+    
 }

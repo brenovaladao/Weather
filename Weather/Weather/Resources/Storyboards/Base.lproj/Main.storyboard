@@ -178,25 +178,24 @@
                                 <rect key="frame" x="0.0" y="194" width="320" height="191"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hh2-i5-0sJ" userLabel="ContainerView">
-                                        <rect key="frame" x="39" y="33.5" width="242" height="124"/>
+                                        <rect key="frame" x="24" y="33.5" width="272" height="124"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="EfW-KU-nBu">
-                                                <rect key="frame" x="0.0" y="0.0" width="242" height="50"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="EfW-KU-nBu">
+                                                <rect key="frame" x="0.0" y="0.0" width="272" height="50"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WBQ-rG-o3C" customClass="WeatherInfoView" customModule="Weather" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="64.5" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="50"/>
                                                         <color key="backgroundColor" white="0.91000000000000003" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iYV-fO-Gfb" customClass="WeatherInfoView" customModule="Weather" customModuleProvider="target">
-                                                        <rect key="frame" x="88.5" y="0.0" width="64" height="50"/>
+                                                        <rect key="frame" x="96" y="0.0" width="80" height="50"/>
                                                         <color key="backgroundColor" white="0.91000000000000003" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" priority="900" constant="62" placeholder="YES" id="6sr-Sc-cQP"/>
-                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="62" id="Fqv-l9-LSa"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TCO-oB-CVE" customClass="WeatherInfoView" customModule="Weather" customModuleProvider="target">
-                                                        <rect key="frame" x="176.5" y="0.0" width="65.5" height="50"/>
+                                                        <rect key="frame" x="192" y="0.0" width="80" height="50"/>
                                                         <color key="backgroundColor" white="0.91000000000000003" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
                                                 </subviews>
@@ -204,15 +203,15 @@
                                                     <constraint firstAttribute="height" constant="50" id="8e3-KJ-YMx"/>
                                                 </constraints>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1es-Jh-d7L">
-                                                <rect key="frame" x="12" y="74" width="218" height="50"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="1es-Jh-d7L">
+                                                <rect key="frame" x="49" y="74" width="174" height="50"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BvA-Fg-Zo1" customClass="WeatherInfoView" customModule="Weather" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="105" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="79" height="50"/>
                                                         <color key="backgroundColor" white="0.91152968036529669" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rAy-ZH-Q5o" customClass="WeatherInfoView" customModule="Weather" customModuleProvider="target">
-                                                        <rect key="frame" x="113" y="0.0" width="105" height="50"/>
+                                                        <rect key="frame" x="95" y="0.0" width="79" height="50"/>
                                                         <color key="backgroundColor" white="0.91152968036529669" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
                                                 </subviews>
@@ -225,10 +224,10 @@
                                         <constraints>
                                             <constraint firstItem="1es-Jh-d7L" firstAttribute="top" secondItem="EfW-KU-nBu" secondAttribute="bottom" constant="24" id="6DE-rX-nZJ"/>
                                             <constraint firstAttribute="bottom" secondItem="1es-Jh-d7L" secondAttribute="bottom" id="FZE-aO-2oY"/>
-                                            <constraint firstItem="1es-Jh-d7L" firstAttribute="leading" secondItem="hh2-i5-0sJ" secondAttribute="leading" constant="12" id="Tml-hW-CXS"/>
+                                            <constraint firstItem="1es-Jh-d7L" firstAttribute="leading" secondItem="hh2-i5-0sJ" secondAttribute="leading" constant="49" id="Tml-hW-CXS"/>
                                             <constraint firstItem="EfW-KU-nBu" firstAttribute="leading" secondItem="hh2-i5-0sJ" secondAttribute="leading" id="Wcg-Ke-Vt8"/>
                                             <constraint firstItem="EfW-KU-nBu" firstAttribute="top" secondItem="hh2-i5-0sJ" secondAttribute="top" id="Yql-P6-CJb"/>
-                                            <constraint firstAttribute="trailing" secondItem="1es-Jh-d7L" secondAttribute="trailing" constant="12" id="fjv-Ay-8bi"/>
+                                            <constraint firstAttribute="trailing" secondItem="1es-Jh-d7L" secondAttribute="trailing" constant="49" id="fjv-Ay-8bi"/>
                                             <constraint firstAttribute="trailing" secondItem="EfW-KU-nBu" secondAttribute="trailing" id="qSb-tm-VUI"/>
                                         </constraints>
                                     </view>
@@ -241,6 +240,7 @@
                                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="hh2-i5-0sJ" secondAttribute="bottom" constant="8" id="Sec-UF-abW"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hh2-i5-0sJ" secondAttribute="trailing" constant="8" id="a79-sy-hyC"/>
                                     <constraint firstItem="hh2-i5-0sJ" firstAttribute="centerX" secondItem="kPd-K6-axF" secondAttribute="centerX" id="bnh-8z-v7t"/>
+                                    <constraint firstItem="iYV-fO-Gfb" firstAttribute="width" relation="greaterThanOrEqual" secondItem="kPd-K6-axF" secondAttribute="width" multiplier="0.25" id="mea-bb-aNH"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EAW-BT-SX5" userLabel="SeparatorView">
@@ -300,7 +300,7 @@
                     <connections>
                         <outlet property="cityCountryLabel" destination="6c9-eb-hHx" id="UhB-7T-FTL"/>
                         <outlet property="humityWeatherInfoView" destination="WBQ-rG-o3C" id="FRO-Pb-C1z"/>
-                        <outlet property="preciptationWeatherInfoView" destination="iYV-fO-Gfb" id="ast-Mu-hJu"/>
+                        <outlet property="precipitationWeatherInfoView" destination="iYV-fO-Gfb" id="ast-Mu-hJu"/>
                         <outlet property="pressureWeatherInfoView" destination="TCO-oB-CVE" id="tcq-ZB-h0Y"/>
                         <outlet property="shareWeatherInfoButton" destination="8mu-cQ-UJI" id="HHD-Ho-ja9"/>
                         <outlet property="temperatureDescriptionLabel" destination="ddJ-v3-BRZ" id="OMN-xh-mym"/>
