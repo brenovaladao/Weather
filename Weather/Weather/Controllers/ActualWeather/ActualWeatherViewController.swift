@@ -93,7 +93,7 @@ extension ActualWeatherViewController {
                 shareWeatherInfoButton.isHidden = false
                 return
         }
-        shareWeatherInfoButton.isHidden = true
+        shareWeatherInfoButton.isHidden = false
 
         let activityViewControllerTitle = String(format: String.shareActivityViewControllerTitle, locationText)
         
