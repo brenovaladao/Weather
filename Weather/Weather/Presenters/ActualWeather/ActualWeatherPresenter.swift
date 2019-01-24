@@ -12,11 +12,15 @@ class ActualWeatherPresenter {
     
     private var actualWeatherView: ActualWeatherProtocol?
     
-    private var isLoadingData = false
+    private var isLoadingData = false {
+        didSet {
+            self.actualWeatherView?.setLoading(isLoadingData)
+        }
+    }
     
     init(actualWeatherView: ActualWeatherProtocol) {
         self.actualWeatherView = actualWeatherView
-        self.bindEmptyViewObject()
+        self.createEmptyViewObject()
     }
 
 }
@@ -55,7 +59,7 @@ extension ActualWeatherPresenter {
 // MARK: - Private
 extension ActualWeatherPresenter {
     
-    private func bindEmptyViewObject() {
+    private func createEmptyViewObject() {
         
         let humity = ActualWeatherInfoItem(image: .humiditySmall, title: "-- %")
         let precipitation = ActualWeatherInfoItem(image: .precipitationSmall, title: "-- mm")
@@ -63,7 +67,7 @@ extension ActualWeatherPresenter {
         let windSpeed = ActualWeatherInfoItem(image: .windSmall, title: "-- km/h")
         let windDirection = ActualWeatherInfoItem(image: .windDirectionSmall, title: "--")
 
-        let emptyViewObject = ActualWeatherViewObject(weatherImage: WeatherImageType.clearSkyD.image,
+        let emptyViewObject = ActualWeatherViewObject(weatherImage: WeatherImageType.clearSkyD.imageBig,
                                                      locationText: " -- ",
                                                      temperatureDescriptionText: " --",
                                                      humity: humity,
@@ -79,7 +83,7 @@ extension ActualWeatherPresenter {
         
         guard let baseWeather = baseWeather else { return nil }
 
-        let weatherImage = baseWeather.weather?.first?.weatherImage
+        let weatherImage = baseWeather.weather?.first?.getImage(size: .big)
         let locationText = getLocationText(baseWeather)
         let temperatureDescriptionText = getTemperatureDescription(baseWeather)
         let humityInfoItem = getHumidityInfoItem(baseWeather)

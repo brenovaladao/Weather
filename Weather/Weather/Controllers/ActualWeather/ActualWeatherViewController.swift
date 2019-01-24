@@ -50,13 +50,7 @@ class ActualWeatherViewController: WeatherViewController {
         shareWeatherInfoButton.titleLabel?.font = UIFont.appFontMedium(ofSize: 18)
         shareWeatherInfoButton.setTitleColor(.weatherOrange, for: .normal)
         shareWeatherInfoButton.setTitle(String.shareButtonTitle, for: .normal)
-    }
-
-    #warning("remove this button and delete in storyboard file")
-    @IBAction func buttonAction(_ sender: Any) {
-        presenter.getActualWeatherData()
-    }
-    
+    }    
 }
 
 // MARK: - ActualWeatherProtocol

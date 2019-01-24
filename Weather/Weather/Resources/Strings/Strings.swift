@@ -22,10 +22,14 @@ extension String {
 
     // MARK: Views
     
+    static let forecastTitle = NSLocalizedString("Forecast", comment: "Default title for `Forecast` item navigation controller")
+
+    static let todayText = NSLocalizedString("Today", comment: "Used in forecast list as a Header fot the forecast for today")
+    
     // MARK: - Errors
     
     static let genericErrorTitle = NSLocalizedString("Attention", comment: "Generic text for errors (will be used as a alert title)")
 
-    static let genericActualWeatherErrorMessage = NSLocalizedString("Some message that I'll write", comment: "Generic text for errors (will be used as a alert message in get actual weather requests)")
+    static let genericActualWeatherErrorMessage = NSLocalizedString("unfortunately a request error occurred, please try again later", comment: "Generic text for errors (will be used as a alert message in get actual weather requests)")
 
 }
