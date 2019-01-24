@@ -25,11 +25,16 @@ class ActualWeatherPresenter {
 // MARK: - Public
 extension ActualWeatherPresenter {
 
-    public func getActualWeatherData(for location: Location) {
+    public func getActualWeatherData() {
         
         guard !isLoadingData else { return }
+        guard let location = LocationManager.shared.currentLocation else {
+            // TODO: Set error
+            return
+        }
+        
         isLoadingData = true
-                
+
         WeatherService.getActualWeather(for: location.latitude, lon: location.longitude) { [weak self] (baseWeather, error) in
             guard let self = self else { return }
             self.isLoadingData = false
@@ -102,7 +107,7 @@ extension ActualWeatherPresenter {
     }
     
     private func getLocationText(_ baseWeather: BaseWeather) -> String? {
-        guard let name = baseWeather.name else { return nil }
+        guard let name = baseWeather.name else { return " -- " }
         if let country = baseWeather.sysInfo?.country {
             return "\(name), \(country)"
         } else {
@@ -158,8 +163,8 @@ extension ActualWeatherPresenter: LocationManagerDelegate {
         actualWeatherView?.setLoading(true)
     }
     
-    func didReceiveNewLocation(_ location: Location) {
-        getActualWeatherData(for: location)
+    func didReceiveNewLocation() {
+        getActualWeatherData()
     }
     
 }

@@ -30,6 +30,7 @@ class ActualWeatherViewController: WeatherViewController {
         
         presenter = ActualWeatherPresenter(actualWeatherView: self)
         setupViews()
+        presenter.getActualWeatherData()
     }
     
     override func viewDidAppear(_ animated: Bool) {

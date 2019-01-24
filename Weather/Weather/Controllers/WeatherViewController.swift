@@ -18,7 +18,7 @@ class WeatherViewController: UIViewController {
 extension WeatherViewController {
     
     public func genericErrorHandler(_ error: Error) {
-
+    
         let title = (error as NSError).localizedDescription
         let message = (error as NSError).localizedFailureReason
 

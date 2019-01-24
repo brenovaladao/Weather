@@ -49,7 +49,7 @@ class ForecastViewController: WeatherViewController {
 extension ForecastViewController {
 
     @objc private func refreshData() {
-        presenter.getForecastData()
+        presenter.getForecastData(true)
     }
     
 }

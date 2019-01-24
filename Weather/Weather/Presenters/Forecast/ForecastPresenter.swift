@@ -12,11 +12,7 @@ class ForecastPresenter {
     
     private var forecastView: ForecastProtocol?
     
-    private var isLoadingData = false {
-        didSet {
-            self.forecastView?.setLoading(isLoadingData)
-        }
-    }
+    private var isLoadingData = false
 
     init(forecastView: ForecastProtocol) {
         self.forecastView = forecastView
@@ -27,19 +23,26 @@ class ForecastPresenter {
 // MARK: - Public
 extension ForecastPresenter {
     
-    func getForecastData() {
+    public func getForecastData(_ refreshing: Bool = false) {
         
         guard !isLoadingData else {
             forecastView?.setLoading(false)
             return
         }
+        guard let location = LocationManager.shared.currentLocation else {
+            forecastView?.setEmptyState()
+            return
+        }
+        
+        if !refreshing {
+            self.forecastView?.setLoading(true)
+        }
         isLoadingData = true
 
-        let lat = -22.9081223
-        let lon = -47.0778804
-
-        WeatherService.getForecast(for: lat, lon: lon) { [weak self] (baseForecast, error) in
+        WeatherService.getForecast(for: location.latitude, lon: location.longitude) { [weak self] (baseForecast, error) in
             guard let self = self else { return }
+            self.forecastView?.setLoading(false)
+
             self.isLoadingData = false
             if let error = error {
                 self.forecastView?.handleError(error)
@@ -105,4 +108,5 @@ extension ForecastPresenter {
         
         return forecastListViewObjects
     }
+    
 }

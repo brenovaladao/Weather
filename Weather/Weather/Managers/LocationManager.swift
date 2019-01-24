@@ -22,12 +22,27 @@ class LocationManager: NSObject {
 
     // MARK: - Constants
     private let lastLocationRequestDateKey = "com.brenovinicios.lastLocationRequest.key"
-//    private let lastLocationRequestTime: TimeInterval = 5 * 60 // 5 = minutes
-    private let lastLocationRequestTime: TimeInterval = 30 // 5 = minutes
+    private let lastLatitudeLocationKey = "com.brenovinicios.lastLocation.latitude.key"
+    private let lastLongitudeLocationKey = "com.brenovinicios.lastLocation.longitude.key"
+    
+    private let lastLocationRequestTime: TimeInterval = 5 * 60 // 5 = minutes
 
     // MARK: Properties
     private var isUpdatingLocation = false
-    private (set) var currentLocation: Location?
+    
+    private (set) var currentLocation: Location? {
+        get {
+            guard let lat = UserDefaultsUtil.getObject(forKey: lastLatitudeLocationKey) as? Double,
+                let lon = UserDefaultsUtil.getObject(forKey: lastLatitudeLocationKey) as? Double else {
+                    return nil
+            }
+            return Location(latitude: lat, longitude: lon)
+        }
+        set {
+            UserDefaultsUtil.setObject(newValue?.latitude, forKey: lastLatitudeLocationKey)
+            UserDefaultsUtil.setObject(newValue?.longitude, forKey: lastLongitudeLocationKey)
+        }
+    }
     
     weak var delegate: LocationManagerDelegate?
     
@@ -36,7 +51,7 @@ class LocationManager: NSObject {
     private lazy var location: CLLocationManager = {
         let locationManager = CLLocationManager()
         locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
         locationManager.distanceFilter = 10.0
         return locationManager
     }()
@@ -70,8 +85,8 @@ extension LocationManager {
             CLLocationManager.authorizationStatus() == .authorizedAlways else {
             return
         }
+
         // Verifying timestamp
-        
         // If There's no date saved, just continue. fisrt request
         if let lastLocationUpdate = UserDefaultsUtil.getObject(forKey: lastLocationRequestDateKey) as? Date {
             guard Date().compare(lastLocationUpdate.addingTimeInterval(lastLocationRequestTime)) == .orderedDescending else {
@@ -94,6 +109,7 @@ extension LocationManager {
         location.stopUpdatingLocation()
         isUpdatingLocation = false
     }
+    
 }
 
 // MARK: - LocationManagerDelegate
@@ -110,10 +126,9 @@ extension LocationManager: CLLocationManagerDelegate {
             let currentLocation = locations.first else {
                 return
         }
-        let location = Location(latitude: currentLocation.coordinate.latitude,
+        self.currentLocation = Location(latitude: currentLocation.coordinate.latitude,
                                         longitude: currentLocation.coordinate.longitude)
-        self.currentLocation = location
-        delegate?.didReceiveNewLocation(location)
+        delegate?.didReceiveNewLocation()
     }
     
 }

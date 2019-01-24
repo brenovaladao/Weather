@@ -12,6 +12,6 @@ protocol LocationManagerDelegate: class {
     
     func startGettingNewLocation()
     
-    func didReceiveNewLocation(_ location: Location)
+    func didReceiveNewLocation()
     
 }

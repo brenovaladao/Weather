@@ -27,7 +27,6 @@ extension WeatherProvider: TargetType {
         switch self {
         case .getActualWeather:
             return "weather"
-            
         case .getForecast:
             return "forecast"
         }
@@ -60,4 +59,5 @@ extension WeatherProvider: TargetType {
     public var headers: [String: String]? {
         return nil
     }
+    
 }
