@@ -29,12 +29,11 @@ class ActualWeatherViewController: WeatherViewController {
         super.viewDidLoad()
         
         presenter = ActualWeatherPresenter(actualWeatherView: self)
-        presenter.getActualWeatherData()
         setupViews()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
         presenter.updateActualWeatherData()
     }
@@ -77,6 +76,13 @@ extension ActualWeatherViewController: ActualWeatherProtocol {
     
     func setLoading(_ loading: Bool) {
         
+    }
+    
+    func requestLocationPermissionInSettings() {
+        alert(with: String.locationPermissionDeniedAlertTitle, message: String.locationPermissionDeniedAlertTitle) {
+            guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
+            UIApplication.shared.open(url)
+        }
     }
     
 }

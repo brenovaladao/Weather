@@ -14,4 +14,5 @@ protocol ActualWeatherProtocol: class {
     
     func setLoading(_ loading: Bool)
     
+    func requestLocationPermissionInSettings()
 }

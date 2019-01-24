@@ -27,6 +27,11 @@ class ForecastViewController: WeatherViewController {
         presenter.getForecastData()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    
     // MARK: Setup
     
     private func setupTableView() {

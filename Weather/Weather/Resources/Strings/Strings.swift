@@ -19,7 +19,7 @@ extension String {
     static let shareButtonTitle = NSLocalizedString("Share", comment: "Share button title")
 
     static let shareActivityViewControllerTitle = NSLocalizedString("Check the current weather info at %@", comment: "Share ActivityController title")
-
+    
     // MARK: Forecast Strings
     
     static let forecastTitle = NSLocalizedString("Forecast", comment: "Default title for `Forecast` item navigation controller")
@@ -31,5 +31,9 @@ extension String {
     static let genericErrorTitle = NSLocalizedString("Attention", comment: "Generic text for errors (will be used as a alert title)")
 
     static let genericActualWeatherErrorMessage = NSLocalizedString("unfortunately a request error occurred, please try again later", comment: "Generic text for errors (will be used as a alert message in get actual weather requests)")
+
+    static let locationPermissionDeniedAlertTitle = NSLocalizedString("Location Permission", comment: "The title of an alert which is shown when the user has denied the location services permission")
+
+    static let locationPermissionDeniedAlertMessage = NSLocalizedString("We need your location to show the actual weather of your place", comment: "The message of an alert which is shown when the user has denied the location services permission")
 
 }

@@ -12,15 +12,12 @@ class ActualWeatherPresenter {
     
     private var actualWeatherView: ActualWeatherProtocol?
     
-    private var isLoadingData = false {
-        didSet {
-            self.actualWeatherView?.setLoading(isLoadingData)
-        }
-    }
+    private var isLoadingData = false
     
     init(actualWeatherView: ActualWeatherProtocol) {
         self.actualWeatherView = actualWeatherView
         self.createEmptyViewObject()
+        LocationManager.shared.delegate = self
     }
 
 }
@@ -28,15 +25,12 @@ class ActualWeatherPresenter {
 // MARK: - Public
 extension ActualWeatherPresenter {
 
-    public func getActualWeatherData() {
+    public func getActualWeatherData(for location: Location) {
         
         guard !isLoadingData else { return }
         isLoadingData = true
-        
-        let lat = -22.9081223
-        let lon = -47.0778804
-        
-        WeatherService.getActualWeather(for: lat, lon: lon) { [weak self] (baseWeather, error) in
+                
+        WeatherService.getActualWeather(for: location.latitude, lon: location.longitude) { [weak self] (baseWeather, error) in
             guard let self = self else { return }
             self.isLoadingData = false
             if let error = error {
@@ -51,7 +45,11 @@ extension ActualWeatherPresenter {
     }
     
     public func updateActualWeatherData() {
-
+        if LocationManager.shared.requestLocationPermission() {
+            LocationManager.shared.getNewLocationIfIsPossible()
+        } else {
+            actualWeatherView?.requestLocationPermissionInSettings()
+        }
     }
     
 }
@@ -149,6 +147,19 @@ extension ActualWeatherPresenter {
     private func getWindDirectionInfoItem(_ baseWeather: BaseWeather) -> ActualWeatherInfoItem {
         let windDirection = baseWeather.wind?.direction ?? " -- "
         return ActualWeatherInfoItem(image: .windDirectionSmall, title: windDirection)
+    }
+    
+}
+
+// MARK: - LocationManagerDelegate
+extension ActualWeatherPresenter: LocationManagerDelegate {
+    
+    func startGettingNewLocation() {
+        actualWeatherView?.setLoading(true)
+    }
+    
+    func didReceiveNewLocation(_ location: Location) {
+        getActualWeatherData(for: location)
     }
     
 }

@@ -7,6 +7,10 @@
 //
 
 import Foundation
+//
+//enum AppError: Error {
+//
+//}
 
 extension NSError {
 

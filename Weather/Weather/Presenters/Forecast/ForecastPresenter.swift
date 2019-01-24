@@ -50,7 +50,7 @@ extension ForecastPresenter {
             self.forecastView?.bind(viewObjects: forecastViewObjects)
         }
     }
-    
+
 }
 
 // MARK: - Private
