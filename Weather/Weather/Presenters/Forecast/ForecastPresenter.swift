@@ -12,6 +12,8 @@ class ForecastPresenter {
     
     private var forecastView: ForecastProtocol?
     
+    private var isLoadingData = false
+
     init(forecastView: ForecastProtocol) {
         self.forecastView = forecastView
     }
@@ -23,15 +25,20 @@ extension ForecastPresenter {
     
     func getForecastData() {
         
+        guard !isLoadingData else { return }
+        isLoadingData = true
+
         let lat = -22.912
         let lon = -48.082
         
-        WeatherService.getForecast(for: lat, lon: lon) { (baseWeather, error) in
+        WeatherService.getForecast(for: lat, lon: lon) { [weak self] (baseWeather, error) in
+            guard let self = self else { return }
+            self.isLoadingData = false
             if let error = error {
-                // TODO: Handle error
+                self.forecastView?.handleError(error)
                 return
             }
-            
+                        
         }
     }
     

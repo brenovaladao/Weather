@@ -9,7 +9,9 @@
 import UIKit
 
 class ForecastTableViewCell: UITableViewCell {
-   
+    
+    static let cellIdentifier = "ForecastCellIdentifier"
+    
     // MARK: - IBOutlets
     @IBOutlet private weak var forecastImageView: UIImageView!
     @IBOutlet private weak var forecastTimeLabel: UILabel!

@@ -8,4 +8,12 @@
 
 protocol ForecastProtocol: class {
     
+    func bind(viewObjects: [ForecastListViewObject])
+    
+    func handleError(_ error: Error)
+    
+    func setLoading(_ loading: Bool)
+    
+    func setEmptyState()
+    
 }

@@ -205,9 +205,9 @@
 		5B3C51E821F6A6BA00D64B92 /* ActualWeather */ = {
 			isa = PBXGroup;
 			children = (
+				5BCC5B5A21F9382400FA2ADA /* ViewObjects */,
 				5B3C51E621F6A6AE00D64B92 /* ActualWeatherPresenter.swift */,
 				5B3C51E921F6A6C800D64B92 /* ActualWeatherProtocol.swift */,
-				5B4C40F621F7E71400ADF651 /* ActualWeatherViewObject.swift */,
 			);
 			path = ActualWeather;
 			sourceTree = "<group>";
@@ -343,6 +343,14 @@
 				5BCC5B5821F936F000FA2ADA /* ForecastTableHeaderView.xib */,
 			);
 			path = ForecastTableHeaderView;
+			sourceTree = "<group>";
+		};
+		5BCC5B5A21F9382400FA2ADA /* ViewObjects */ = {
+			isa = PBXGroup;
+			children = (
+				5B4C40F621F7E71400ADF651 /* ActualWeatherViewObject.swift */,
+			);
+			path = ViewObjects;
 			sourceTree = "<group>";
 		};
 		5BD99D0121F38D4B00249542 /* Models */ = {
