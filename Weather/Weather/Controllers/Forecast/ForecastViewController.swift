@@ -27,6 +27,11 @@ class ForecastViewController: WeatherViewController {
         presenter.getForecastData()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    
     // MARK: Setup
     
     private func setupTableView() {
@@ -44,7 +49,7 @@ class ForecastViewController: WeatherViewController {
 extension ForecastViewController {
 
     @objc private func refreshData() {
-        presenter.getForecastData()
+        presenter.getForecastData(true)
     }
     
 }

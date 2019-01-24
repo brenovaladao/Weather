@@ -9,6 +9,7 @@
 import UIKit
 
 struct ActualWeatherViewObject {
+    
     let weatherImage: UIImage?
     let locationText: String?
     let temperatureDescriptionText: String?
@@ -17,6 +18,7 @@ struct ActualWeatherViewObject {
     let pressure: ActualWeatherInfoItem
     let wind: ActualWeatherInfoItem
     let windDirection: ActualWeatherInfoItem
+    
 }
 
 struct ActualWeatherInfoItem {

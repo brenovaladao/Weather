@@ -8,11 +8,28 @@
 
 import Foundation
 
-extension NSError {
+enum AppError: CustomNSError {
 
-    static let actualWeatherRequestError = NSError(domain: AppDefaults.errorDomain,
-                                                   code: 9990,
-                                                   userInfo: [NSLocalizedDescriptionKey: String.genericErrorTitle,
-                                                              NSLocalizedFailureReasonErrorKey: String.genericActualWeatherErrorMessage])
+    case objectsMapperError
     
+    var errorCode: Int {
+        switch self {
+        case .objectsMapperError:
+            return 9990
+        }
+    }
+
+    var errorUserInfo: [String: Any] {
+        let localizableDescription: String
+        let localizableFailureRease: String
+
+        switch self {
+        case .objectsMapperError:
+            localizableDescription = String.genericErrorTitle
+            localizableFailureRease = String.genericActualWeatherErrorMessage
+        }
+        return [NSLocalizedDescriptionKey: localizableDescription,
+                NSLocalizedFailureReasonErrorKey: localizableFailureRease]
+    }
+
 }
