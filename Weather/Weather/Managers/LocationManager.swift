@@ -33,7 +33,7 @@ class LocationManager: NSObject {
     private (set) var currentLocation: Location? {
         get {
             guard let lat = UserDefaultsUtil.getObject(forKey: lastLatitudeLocationKey) as? Double,
-                let lon = UserDefaultsUtil.getObject(forKey: lastLatitudeLocationKey) as? Double else {
+                let lon = UserDefaultsUtil.getObject(forKey: lastLongitudeLocationKey) as? Double else {
                     return nil
             }
             return Location(latitude: lat, longitude: lon)
