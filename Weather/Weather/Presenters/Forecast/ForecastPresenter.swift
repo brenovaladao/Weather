@@ -95,7 +95,7 @@ extension ForecastPresenter {
                 
                 let forecastDay: String
                 if NSCalendar.current.isDateInToday(date) {
-                    forecastDay = String.todayText
+                    forecastDay = String.todayHeaderText
                 } else {
                     forecastDay = Date.dayOfWeekFormatter.string(from: date)
                 }

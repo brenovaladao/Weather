@@ -1,5 +1,5 @@
 //
-//  Sequence.swift
+//  Sequence+Util.swift
 //  Weather
 //
 //  Created by Breno Vinícios on 23/01/19.

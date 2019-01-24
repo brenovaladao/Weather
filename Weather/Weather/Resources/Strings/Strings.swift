@@ -17,14 +17,14 @@ extension String {
     // MARK: Actual Weather Strings
     
     static let shareButtonTitle = NSLocalizedString("Share", comment: "Share button title")
-    
-    // MARK: Forecast Strings
 
-    // MARK: Views
+    static let shareActivityViewControllerTitle = NSLocalizedString("Check the current weather info at %@", comment: "Share ActivityController title")
+
+    // MARK: Forecast Strings
     
     static let forecastTitle = NSLocalizedString("Forecast", comment: "Default title for `Forecast` item navigation controller")
 
-    static let todayText = NSLocalizedString("Today", comment: "Used in forecast list as a Header fot the forecast for today")
+    static let todayHeaderText = NSLocalizedString("Today", comment: "Used in forecast list as a Header fot the forecast for today")
     
     // MARK: - Errors
     
