@@ -115,9 +115,9 @@ extension ActualWeatherPresenter {
     private func getTemperatureDescription(_ baseWeather: BaseWeather) -> String? {
         guard let temperature = baseWeather.weatherMainInfo?.temperature else { return nil }
         if let weatherDescription = baseWeather.weather?.first?.description?.capitalized {
-            return "\(temperature)°C | \(weatherDescription)"
+            return String(format: "%.0f°C | %@", temperature, weatherDescription)
         } else {
-            return "\(temperature)°C"
+            return String(format: "%.0f°C", temperature)
         }
     }
     
@@ -150,4 +150,5 @@ extension ActualWeatherPresenter {
         let windDirection = baseWeather.wind?.direction ?? " -- "
         return ActualWeatherInfoItem(image: .windDirectionSmall, title: windDirection)
     }
+    
 }

@@ -22,6 +22,7 @@ class ActualWeatherViewController: WeatherViewController {
     @IBOutlet private weak var windWeatherInfoView: WeatherInfoView!
     @IBOutlet private weak var windDirectionWeatherInfoView: WeatherInfoView!
     @IBOutlet private weak var shareWeatherInfoButton: UIButton!
+    private var locationText: String?
     
     // MARK: Life cycle
     override func viewDidLoad() {
@@ -58,6 +59,8 @@ extension ActualWeatherViewController: ActualWeatherProtocol {
     
     func bind(viewObject: ActualWeatherViewObject) {
         
+        locationText = viewObject.locationText
+        
         weatherImageView.image = viewObject.weatherImage
         cityCountryLabel.text = viewObject.locationText
         temperatureDescriptionLabel.text = viewObject.temperatureDescriptionText
@@ -82,7 +85,22 @@ extension ActualWeatherViewController: ActualWeatherProtocol {
 extension ActualWeatherViewController {
     
     @IBAction private func shareWeatherInfoButtonAction() {
+    
+        shareWeatherInfoButton.isHidden = true
         
+        guard let locationText = locationText,
+            let viewScreenShot = view.takeScreenshot() else {
+                shareWeatherInfoButton.isHidden = false
+                return
+        }
+        shareWeatherInfoButton.isHidden = true
+
+        let activityViewControllerTitle = String(format: String.shareActivityViewControllerTitle, locationText)
+        
+        let activityViewController = UIActivityViewController(activityItems: [activityViewControllerTitle, viewScreenShot],
+                                                              applicationActivities: nil)
+        
+        present(activityViewController, animated: true, completion: nil)
     }
     
 }

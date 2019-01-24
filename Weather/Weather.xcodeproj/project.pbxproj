@@ -50,9 +50,10 @@
 		5BCC5B5421F9364F00FA2ADA /* ForecastListViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC5B5321F9364F00FA2ADA /* ForecastListViewObject.swift */; };
 		5BCC5B5721F936DC00FA2ADA /* ForecastTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC5B5621F936DC00FA2ADA /* ForecastTableHeaderView.swift */; };
 		5BCC5B5921F936F000FA2ADA /* ForecastTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BCC5B5821F936F000FA2ADA /* ForecastTableHeaderView.xib */; };
-		5BCC5B5D21F93F4200FA2ADA /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC5B5C21F93F4200FA2ADA /* DateFormatters.swift */; };
-		5BCC5B6021F94C2500FA2ADA /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC5B5F21F94C2500FA2ADA /* Sequence.swift */; };
+		5BCC5B5D21F93F4200FA2ADA /* DateFormatters+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC5B5C21F93F4200FA2ADA /* DateFormatters+Util.swift */; };
+		5BCC5B6021F94C2500FA2ADA /* Sequence+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC5B5F21F94C2500FA2ADA /* Sequence+Util.swift */; };
 		5BCC5B6321F9577300FA2ADA /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC5B6221F9577300FA2ADA /* WeatherService.swift */; };
+		5BCC5B6621F9610600FA2ADA /* View+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC5B6521F9610600FA2ADA /* View+Util.swift */; };
 		5BD99D0B21F390FE00249542 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD99D0A21F390FE00249542 /* WeatherViewController.swift */; };
 		5BD99D0D21F3915300249542 /* ActualWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD99D0C21F3915300249542 /* ActualWeatherViewController.swift */; };
 		5BD99D1121F3918400249542 /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD99D1021F3918400249542 /* ForecastViewController.swift */; };
@@ -134,9 +135,10 @@
 		5BCC5B5321F9364F00FA2ADA /* ForecastListViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastListViewObject.swift; sourceTree = "<group>"; };
 		5BCC5B5621F936DC00FA2ADA /* ForecastTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTableHeaderView.swift; sourceTree = "<group>"; };
 		5BCC5B5821F936F000FA2ADA /* ForecastTableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForecastTableHeaderView.xib; sourceTree = "<group>"; };
-		5BCC5B5C21F93F4200FA2ADA /* DateFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatters.swift; sourceTree = "<group>"; };
-		5BCC5B5F21F94C2500FA2ADA /* Sequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sequence.swift; sourceTree = "<group>"; };
+		5BCC5B5C21F93F4200FA2ADA /* DateFormatters+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatters+Util.swift"; sourceTree = "<group>"; };
+		5BCC5B5F21F94C2500FA2ADA /* Sequence+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Util.swift"; sourceTree = "<group>"; };
 		5BCC5B6221F9577300FA2ADA /* WeatherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		5BCC5B6521F9610600FA2ADA /* View+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Util.swift"; sourceTree = "<group>"; };
 		5BD99D0A21F390FE00249542 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		5BD99D0C21F3915300249542 /* ActualWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualWeatherViewController.swift; sourceTree = "<group>"; };
 		5BD99D1021F3918400249542 /* ForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift; sourceTree = "<group>"; };
@@ -360,7 +362,7 @@
 		5BCC5B5B21F93F2700FA2ADA /* DateFormatter */ = {
 			isa = PBXGroup;
 			children = (
-				5BCC5B5C21F93F4200FA2ADA /* DateFormatters.swift */,
+				5BCC5B5C21F93F4200FA2ADA /* DateFormatters+Util.swift */,
 			);
 			path = DateFormatter;
 			sourceTree = "<group>";
@@ -368,7 +370,7 @@
 		5BCC5B5E21F94C1A00FA2ADA /* Sequence */ = {
 			isa = PBXGroup;
 			children = (
-				5BCC5B5F21F94C2500FA2ADA /* Sequence.swift */,
+				5BCC5B5F21F94C2500FA2ADA /* Sequence+Util.swift */,
 			);
 			path = Sequence;
 			sourceTree = "<group>";
@@ -376,10 +378,19 @@
 		5BCC5B6121F94C4200FA2ADA /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				5BCC5B6421F960F900FA2ADA /* View */,
 				5BCC5B5E21F94C1A00FA2ADA /* Sequence */,
 				5BCC5B5B21F93F2700FA2ADA /* DateFormatter */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		5BCC5B6421F960F900FA2ADA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5BCC5B6521F9610600FA2ADA /* View+Util.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		5BD99D0121F38D4B00249542 /* Models */ = {
@@ -769,7 +780,8 @@
 				5B3C51EC21F6A8AF00D64B92 /* MoyaLoggerPlugin.swift in Sources */,
 				5B3C51E721F6A6AE00D64B92 /* ActualWeatherPresenter.swift in Sources */,
 				5BCC5B4F21F9335B00FA2ADA /* ForecastTableViewCell.swift in Sources */,
-				5BCC5B5D21F93F4200FA2ADA /* DateFormatters.swift in Sources */,
+				5BCC5B6621F9610600FA2ADA /* View+Util.swift in Sources */,
+				5BCC5B5D21F93F4200FA2ADA /* DateFormatters+Util.swift in Sources */,
 				5BD99D1721F39F7900249542 /* Colors.swift in Sources */,
 				5B3C51FD21F6BA1100D64B92 /* ForecastProtocol.swift in Sources */,
 				5B4C40EC21F7DA0900ADF651 /* WeatherInfoView.swift in Sources */,
@@ -788,7 +800,7 @@
 				5BD99D1421F39F5500249542 /* TabBarItem.swift in Sources */,
 				5B3C51DD21F69DCC00D64B92 /* SysInfo.swift in Sources */,
 				5B4C40F121F7E01400ADF651 /* Strings.swift in Sources */,
-				5BCC5B6021F94C2500FA2ADA /* Sequence.swift in Sources */,
+				5BCC5B6021F94C2500FA2ADA /* Sequence+Util.swift in Sources */,
 				5B4C40FA21F7ED4700ADF651 /* WeatherImageType.swift in Sources */,
 				5B3C51CF21F696F800D64B92 /* BaseWeather.swift in Sources */,
 				5B3C51D521F69AE900D64B92 /* WeatherMainInfo.swift in Sources */,
