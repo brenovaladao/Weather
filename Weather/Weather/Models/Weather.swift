@@ -38,9 +38,17 @@ struct Weather: Codable {
 // MARK: - Getters
 extension Weather {
     
-    var weatherImage: UIImage? {
+    func getImage(size: WeatherImageSize) -> UIImage? {
+        
         guard let icon = icon else { return nil }
-        return WeatherImageType.allCases.filter({ $0.rawValue == icon }).first?.image
+        let imageType = WeatherImageType.allCases.filter({ $0.rawValue == icon }).first
+        
+        switch size {
+        case .big:
+            return imageType?.imageBig
+        case .medium:
+            return imageType?.imageMedium
+        }
     }
     
 }

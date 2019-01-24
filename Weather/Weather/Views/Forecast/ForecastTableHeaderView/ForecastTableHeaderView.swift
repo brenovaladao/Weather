@@ -40,18 +40,13 @@ class ForecastTableHeaderView: UIView {
     
     // MARK: - Setup
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        setupViews()
-    }
-    
     private func setupViews() {
         headerTitleLabel.font = UIFont.appFontSemiBold(ofSize: 14)
         headerTitleLabel.textColor = UIColor.weatherDarkGray
     }
     
     public func setup(with title: String?) {
+        setupViews()
         headerTitleLabel.text = title
     }
     

@@ -57,12 +57,17 @@ extension ForecastViewController: ForecastProtocol {
         tableView.reloadData()
     }
     
+    func bind(cityName: String) {
+        title = cityName
+        
+    }
+    
     func handleError(_ error: Error) {
         genericErrorHandler(error)
     }
     
     func setLoading(_ loading: Bool) {
-        
+        refreshControl.endRefreshing()
     }
     
     func setEmptyState() {

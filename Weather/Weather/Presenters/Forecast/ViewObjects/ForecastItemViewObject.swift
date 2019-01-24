@@ -9,6 +9,7 @@
 import UIKit
 
 struct ForecastItemViewObject {
+    let forecastDateKey: String
     let forecastImage: UIImage?
     let forecastTime: String?
     let forecastDescription: String?

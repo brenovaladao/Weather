@@ -67,15 +67,15 @@
                                                     <rect key="frame" x="16" y="15" width="60" height="60"/>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUx-Tz-DNg">
-                                                    <rect key="frame" x="108" y="21" width="88" height="48"/>
+                                                    <rect key="frame" x="100" y="21" width="88" height="48"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lF4-Dr-qf9">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="lF4-Dr-qf9">
                                                             <rect key="frame" x="0.0" y="0.0" width="88" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FC3-Cm-sss">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="FC3-Cm-sss">
                                                             <rect key="frame" x="0.0" y="27" width="88" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -107,7 +107,7 @@
                                                 <constraint firstItem="jFa-qS-Woy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JUx-Tz-DNg" secondAttribute="trailing" constant="16" id="9CP-cn-AWb"/>
                                                 <constraint firstItem="dC1-3k-TTp" firstAttribute="centerY" secondItem="k8T-OR-OuL" secondAttribute="centerY" id="9md-hj-NBE"/>
                                                 <constraint firstItem="jFa-qS-Woy" firstAttribute="top" secondItem="k8T-OR-OuL" secondAttribute="top" constant="8" id="M71-FB-aq8"/>
-                                                <constraint firstItem="JUx-Tz-DNg" firstAttribute="leading" secondItem="dC1-3k-TTp" secondAttribute="trailing" constant="32" id="Qhe-Tk-7W7"/>
+                                                <constraint firstItem="JUx-Tz-DNg" firstAttribute="leading" secondItem="dC1-3k-TTp" secondAttribute="trailing" constant="24" id="Qhe-Tk-7W7"/>
                                                 <constraint firstItem="dC1-3k-TTp" firstAttribute="leading" secondItem="k8T-OR-OuL" secondAttribute="leading" constant="16" id="kF0-4f-cEW"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="JUx-Tz-DNg" secondAttribute="bottom" constant="16" id="qxG-1f-t4g"/>
                                                 <constraint firstAttribute="trailing" secondItem="jFa-qS-Woy" secondAttribute="trailing" constant="16" id="uhP-oF-U0P"/>

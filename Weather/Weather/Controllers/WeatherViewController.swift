@@ -13,10 +13,11 @@ class WeatherViewController: UIViewController {
     
 }
 
-// MARK: -
+// MARK: - Shared Public Methods
+
 extension WeatherViewController {
     
-    func genericErrorHandler(_ error: Error) {
+    public func genericErrorHandler(_ error: Error) {
 
         let title = (error as NSError).localizedDescription
         let message = (error as NSError).localizedFailureReason
@@ -25,7 +26,7 @@ extension WeatherViewController {
         
     }
     
-    func alert(with title: String?, message: String? = nil, hasCancelAction: Bool = false, okAction: (() -> Void)? = nil) {
+    public func alert(with title: String?, message: String? = nil, hasCancelAction: Bool = false, okAction: (() -> Void)? = nil) {
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
     

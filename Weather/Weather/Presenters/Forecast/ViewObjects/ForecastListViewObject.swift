@@ -9,6 +9,7 @@
 import Foundation
 
 struct ForecastListViewObject {
+    let date: Date
     let headerTitle: String?
     let forecastItems: [ForecastItemViewObject]
 }

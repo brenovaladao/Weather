@@ -9,6 +9,11 @@
 import Foundation
 import UIKit
 
+enum WeatherImageSize {
+    case big
+    case medium
+}
+
 enum WeatherImageType: String, CaseIterable {
    
     case clearSkyD = "01d"
@@ -30,7 +35,48 @@ enum WeatherImageType: String, CaseIterable {
     case mistD = "50d"
     case mistN = "50n"
     
-    var image: UIImage? {
+    var imageMedium: UIImage? {
+        switch self {
+        case .clearSkyD:
+            return .clearSkyDayMedium
+        case .clearSkyN:
+            return .clearSkyNightMedium
+        case .fewCloudsD:
+            return .fewCloudsDayMedium
+        case .fewCloudsN:
+            return .fewCloudsNightMedium
+        case .scatteredCloudsD:
+            return .scatteredCloudsDayMedium
+        case .scatteredCloudsN:
+            return .scatteredCloudsNightMedium
+        case .brokenCloudsD:
+            return .brokenCloudsDayMedium
+        case .brokenCloudsN:
+            return .brokenCloudsNightMedium
+        case .showerRainD:
+            return .showerRainDayMedium
+        case .showerRainN:
+            return .showerRainNightMedium
+        case .rainD:
+            return .rainDayMedium
+        case .rainN:
+            return .rainNightMedium
+        case .thunderstormD:
+            return .thunderstormDayMedium
+        case .thunderstormN:
+            return .thunderstormNightMedium
+        case .snowD:
+            return .snowDayMedium
+        case .snowN:
+            return .snowNightMedium
+        case .mistD:
+            return .mistDayMedium
+        case .mistN:
+            return .mistNightMedium
+        }
+    }
+    
+    var imageBig: UIImage? {
         switch self {
         case .clearSkyD:
             return .clearSkyDayBig
@@ -70,5 +116,5 @@ enum WeatherImageType: String, CaseIterable {
             return .mistNightBig
         }
     }
-    
+
 }
