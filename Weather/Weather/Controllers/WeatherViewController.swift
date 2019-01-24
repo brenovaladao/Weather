@@ -26,11 +26,11 @@ extension WeatherViewController {
         
     }
     
-    public func alert(with title: String?, message: String? = nil, hasCancelAction: Bool = false, okAction: (() -> Void)? = nil) {
+    public func alert(with title: String?, message: String? = nil, hasCancelAction: Bool = false, okButtonTitle: String = String.okText, okAction: (() -> Void)? = nil) {
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
     
-        alertController.addAction(UIAlertAction(title: String.okText, style: .default) { (_) in
+        alertController.addAction(UIAlertAction(title: okButtonTitle, style: .default) { (_) in
             okAction?()
         })
         present(alertController, animated: true, completion: nil)

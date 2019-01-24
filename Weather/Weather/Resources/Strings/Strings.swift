@@ -36,4 +36,6 @@ extension String {
 
     static let locationPermissionDeniedAlertMessage = NSLocalizedString("We need your location to show the actual weather of your place", comment: "The message of an alert which is shown when the user has denied the location services permission")
 
+    static let goToSettingsButtonAction = NSLocalizedString("Go to settings", comment: "The title of the button alert thats redirects the user to app settings in the device settings")
+
 }
