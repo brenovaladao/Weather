@@ -32,12 +32,13 @@ extension ActualWeatherPresenter {
             // TODO: Set error
             return
         }
-        
+        actualWeatherView?.setLoading(true)
         isLoadingData = true
 
         WeatherService.getActualWeather(for: location.latitude, lon: location.longitude) { [weak self] (baseWeather, error) in
             guard let self = self else { return }
             self.isLoadingData = false
+            self.actualWeatherView?.setLoading(false)
             if let error = error {
                 self.actualWeatherView?.handleError(error)
                 return
@@ -160,6 +161,7 @@ extension ActualWeatherPresenter {
 extension ActualWeatherPresenter: LocationManagerDelegate {
     
     func startGettingNewLocation() {
+        guard !isLoadingData else { return }
         actualWeatherView?.setLoading(true)
     }
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ForecastViewController: WeatherViewController {
+class ForecastViewController: UIViewController {
     
     private var presenter: ForecastPresenter!
     
@@ -72,7 +72,12 @@ extension ForecastViewController: ForecastProtocol {
     }
     
     func setLoading(_ loading: Bool) {
-        refreshControl.endRefreshing()
+        guard loading else {
+            refreshControl.endRefreshing()
+            stopLoader()
+            return
+        }
+        startLoader()
     }
     
     func setEmptyState() {

@@ -86,9 +86,7 @@ extension LocationManager {
             return
         }
 
-        guard verifyIfCanUpdateLocationByTime() else {
-            return
-        }
+        guard verifyIfCanUpdateLocationByTime() else { return }
         
         location.startUpdatingLocation()
         delegate?.startGettingNewLocation()

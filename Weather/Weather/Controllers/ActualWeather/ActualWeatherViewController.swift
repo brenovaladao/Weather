@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ActualWeatherViewController: WeatherViewController {
+class ActualWeatherViewController: UIViewController {
     
     private var presenter: ActualWeatherPresenter!
     
@@ -76,13 +76,17 @@ extension ActualWeatherViewController: ActualWeatherProtocol {
     }
     
     func setLoading(_ loading: Bool) {
-        
+        if loading {
+            startLoader()
+        } else {
+            stopLoader()
+        }
     }
     
     func requestLocationPermissionInSettings() {
         alert(with: String.locationPermissionDeniedAlertTitle,
               message: String.locationPermissionDeniedAlertMessage,
-              okButtonTitle: String.goToSettingsButtonAction) {
+              actionButtonTitle: String.goToSettingsButtonAction) {
                 
             guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
             UIApplication.shared.open(url)
