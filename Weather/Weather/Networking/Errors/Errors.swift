@@ -10,12 +10,16 @@ import Foundation
 
 enum AppError: CustomNSError {
 
-    case objectsMapperError
+    case objectMapperError
+    
+    case requestError
     
     var errorCode: Int {
         switch self {
-        case .objectsMapperError:
+        case .requestError:
             return 9990
+        case .objectMapperError:
+            return 9991
         }
     }
 
@@ -24,7 +28,8 @@ enum AppError: CustomNSError {
         let localizableFailureRease: String
 
         switch self {
-        case .objectsMapperError:
+        case .objectMapperError,
+             .requestError:
             localizableDescription = String.genericErrorTitle
             localizableFailureRease = String.genericActualWeatherErrorMessage
         }
