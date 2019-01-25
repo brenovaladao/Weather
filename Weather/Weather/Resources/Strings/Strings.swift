@@ -14,6 +14,8 @@ extension String {
     
     static let okText = NSLocalizedString("OK", comment: "A text used for confirmation fields, buttons, etc")
 
+    static let cancelText = NSLocalizedString("Cancel", comment: "A text used for the `cancel` action")
+
     // MARK: Actual Weather Strings
     
     static let shareButtonTitle = NSLocalizedString("Share", comment: "Share button title")
