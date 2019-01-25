@@ -27,17 +27,19 @@ struct BaseForecast: Codable {
     init(from decoder: Decoder) throws {
         
         let container = try decoder.container(keyedBy: JsonKeys.self)
-        
-        let codeStr = try container.decodeIfPresent(String.self, forKey: .code)
-        if let codeStr = codeStr {
-            code = Int(codeStr)
-        } else {
-            code = nil
-        }
-        
-        // Verify valid status code
-        if let code = code, code != 200 {
-            throw NSError(domain: AppDefaults.errorDomain, code: code, userInfo: nil)
+    
+        do {
+            let codeStr = try container.decodeIfPresent(String.self, forKey: .code)
+            if let codeStr = codeStr {
+                code = Int(codeStr)
+                guard code == 200 else {
+                    throw AppError.requestError
+                }
+            } else {
+                code = nil
+            }
+        } catch {
+            throw AppError.objectMapperError
         }
 
         message = try container.decodeIfPresent(Double.self, forKey: .message)

@@ -51,7 +51,7 @@ extension ActualWeatherPresenter {
     
     public func updateActualWeatherData() {
         if LocationManager.shared.requestLocationPermission() {
-            LocationManager.shared.getNewLocationIfIsPossible()
+            LocationManager.shared.requestNewLocationIfIsPossible()
         } else {
             actualWeatherView?.requestLocationPermissionInSettings()
         }

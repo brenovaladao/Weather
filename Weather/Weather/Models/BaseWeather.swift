@@ -46,8 +46,11 @@ struct BaseWeather: Codable {
 
         do {
             code = try container.decodeIfPresent(Int.self, forKey: .code)
+            if let code = code, code != 200 {
+                throw AppError.requestError
+            }
         } catch {
-            throw AppError.objectsMapperError
+            throw AppError.objectMapperError
         }
         
         id = try container.decodeIfPresent(Int.self, forKey: .id)

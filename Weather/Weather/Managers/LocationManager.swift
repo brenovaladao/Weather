@@ -30,7 +30,7 @@ class LocationManager: NSObject {
     // MARK: Properties
     private var isUpdatingLocation = false
     
-    private (set) var currentLocation: Location? {
+    private(set) var currentLocation: Location? {
         get {
             guard let lat = UserDefaultsUtil.getObject(forKey: lastLatitudeLocationKey) as? Double,
                 let lon = UserDefaultsUtil.getObject(forKey: lastLongitudeLocationKey) as? Double else {
@@ -45,8 +45,6 @@ class LocationManager: NSObject {
     }
     
     weak var delegate: LocationManagerDelegate?
-    
-    // MARK: Properties
     
     private lazy var location: CLLocationManager = {
         let locationManager = CLLocationManager()
@@ -76,7 +74,7 @@ extension LocationManager {
         }
     }
     
-    public func getNewLocationIfIsPossible() {
+    public func requestNewLocationIfIsPossible() {
         
         guard !isUpdatingLocation else { return }
         
@@ -121,7 +119,7 @@ extension LocationManager {
 extension LocationManager: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        getNewLocationIfIsPossible()
+        requestNewLocationIfIsPossible()
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

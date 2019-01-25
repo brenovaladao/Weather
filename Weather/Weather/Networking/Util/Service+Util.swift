@@ -27,7 +27,7 @@ struct ServiceUtil {
                 let object = try response.map(T.self)
                 completion(object, nil)
             } catch {
-                completion(nil, AppError.objectsMapperError)
+                completion(nil, AppError.objectMapperError)
             }
         case let .failure(error):
             completion(nil, error)
