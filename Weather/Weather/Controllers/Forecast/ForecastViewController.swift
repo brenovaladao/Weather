@@ -17,6 +17,14 @@ class ForecastViewController: UIViewController {
     private var refreshControl = UIRefreshControl()
     private var viewObjects = [ForecastListViewObject]()
     
+    private lazy var emptyState: ForecastEmptyStateView = {
+        let emptyState = ForecastEmptyStateView(frame: .zero)
+        emptyState.setupAction {
+            self.presenter.getForecastData()
+        }
+        return emptyState
+    }()
+    
     // MARK: Life cycle
 
     override func viewDidLoad() {
@@ -25,11 +33,6 @@ class ForecastViewController: UIViewController {
         presenter = ForecastPresenter(forecastView: self)
         setupTableView()
         presenter.getForecastData()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
     }
     
     // MARK: Setup
@@ -63,8 +66,7 @@ extension ForecastViewController: ForecastProtocol {
     }
     
     func bind(cityName: String) {
-        title = cityName
-        
+        navigationItem.title = cityName
     }
     
     func handleError(_ error: Error) {
@@ -80,10 +82,14 @@ extension ForecastViewController: ForecastProtocol {
         startLoader()
     }
     
-    func setEmptyState() {
-        
+    func setupEmptyState(_ empty: Bool) {
+        tableView.backgroundView = empty ? emptyState : nil
     }
-
+    
+    func requestLocationPermissionInSettings() {
+        openAppSettings()
+    }
+    
 }
 
 // MARK: - UITableViewDelegate

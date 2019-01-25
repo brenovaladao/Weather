@@ -25,15 +25,21 @@ extension ForecastPresenter {
     
     public func getForecastData(_ refreshing: Bool = false) {
         
+        guard LocationManager.shared.requestLocationPermission() else {
+            setViewEmptyStateViewVisible()
+            forecastView?.requestLocationPermissionInSettings()
+            return
+        }
+        
         guard !isLoadingData else {
             forecastView?.setLoading(false)
             return
         }
+        
         guard let location = LocationManager.shared.currentLocation else {
-            forecastView?.setEmptyState()
+            setViewEmptyStateViewVisible()
             return
         }
-        
         if !refreshing {
             self.forecastView?.setLoading(true)
         }
@@ -46,11 +52,13 @@ extension ForecastPresenter {
             self.isLoadingData = false
             if let error = error {
                 self.forecastView?.handleError(error)
+                self.setViewEmptyStateViewVisible()
                 return
             }
             self.setCityName(from: baseForecast)
             let forecastViewObjects = self.createViewObjects(from: baseForecast)
             self.forecastView?.bind(viewObjects: forecastViewObjects)
+            self.forecastView?.setupEmptyState(forecastViewObjects.isEmpty)
         }
     }
 
@@ -79,7 +87,7 @@ extension ForecastPresenter {
             let forecastDescription = forecast.weather?.first?.description?.capitalized
             
             let temperature = forecast.weatherMainInfo?.temperature ?? 0
-            let forecastTemperature = String(format: "%.0f°", temperature)
+            let forecastTemperature = String(format: String.temperatureTextSimple, temperature)
 
             let forecastItemViewObject = ForecastItemViewObject(forecastDateKey: dateKey,
                                                                 forecastImage: forecastImage,
@@ -107,6 +115,12 @@ extension ForecastPresenter {
             }).sorted(by: { return $0.date.compare($1.date) == .orderedAscending })
         
         return forecastListViewObjects
+    }
+    
+    private func setViewEmptyStateViewVisible() {
+        forecastView?.bind(viewObjects: [])
+        forecastView?.setupEmptyState(true)
+        forecastView?.setLoading(false)
     }
     
 }

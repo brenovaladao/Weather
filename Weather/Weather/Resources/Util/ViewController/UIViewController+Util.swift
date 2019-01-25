@@ -39,7 +39,7 @@ extension UIViewController {
         guard let loaderViewController = children.filter({ $0.isKind(of: LoaderViewController.self) }).first as? LoaderViewController else {
             return
         }
-        UIView.animate(withDuration: 0.3, animations: {
+        UIView.animate(withDuration: 0.2, animations: {
             loaderViewController.view.alpha = 0
         }, completion: { _ in
             self.removeChildController(loaderViewController)
@@ -60,6 +60,14 @@ extension UIViewController {
         
     }
     
+    public func openAppSettings() {
+        alert(with: String.locationPermissionDeniedAlertTitle,
+              message: String.locationPermissionDeniedAlertMessage,
+              actionButtonTitle: String.goToSettingsButtonAction) {
+                guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
+                UIApplication.shared.open(url)
+        }
+    }
 }
 
 // MARK: - AlertController
