@@ -84,13 +84,7 @@ extension ActualWeatherViewController: ActualWeatherProtocol {
     }
     
     func requestLocationPermissionInSettings() {
-        alert(with: String.locationPermissionDeniedAlertTitle,
-              message: String.locationPermissionDeniedAlertMessage,
-              actionButtonTitle: String.goToSettingsButtonAction) {
-                
-            guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
-            UIApplication.shared.open(url)
-        }
+        openAppSettings()
     }
     
 }

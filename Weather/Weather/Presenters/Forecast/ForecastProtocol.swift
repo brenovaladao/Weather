@@ -16,6 +16,8 @@ protocol ForecastProtocol: class {
     
     func setLoading(_ loading: Bool)
     
-    func setEmptyState()
+    func setupEmptyState(_ empty: Bool)
     
+    func requestLocationPermissionInSettings()
+
 }

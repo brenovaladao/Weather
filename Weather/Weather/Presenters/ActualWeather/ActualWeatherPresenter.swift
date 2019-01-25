@@ -28,10 +28,9 @@ extension ActualWeatherPresenter {
     public func getActualWeatherData() {
         
         guard !isLoadingData else { return }
-        guard let location = LocationManager.shared.currentLocation else {
-            // TODO: Set error
-            return
-        }
+
+        guard let location = LocationManager.shared.currentLocation else { return }
+        
         actualWeatherView?.setLoading(true)
         isLoadingData = true
 
@@ -65,15 +64,15 @@ extension ActualWeatherPresenter {
     
     private func createEmptyViewObject() {
         
-        let humity = ActualWeatherInfoItem(image: .humiditySmall, title: "-- %")
-        let precipitation = ActualWeatherInfoItem(image: .precipitationSmall, title: "-- mm")
-        let pressure = ActualWeatherInfoItem(image: .pressureSmall, title: "-- hPa")
-        let windSpeed = ActualWeatherInfoItem(image: .windSmall, title: "-- km/h")
-        let windDirection = ActualWeatherInfoItem(image: .windDirectionSmall, title: "--")
+        let humity = ActualWeatherInfoItem(image: .humiditySmall, title: String.humidityPercetagePlaceholder)
+        let precipitation = ActualWeatherInfoItem(image: .precipitationSmall, title: String.precepitatioMMPlaceholder)
+        let pressure = ActualWeatherInfoItem(image: .pressureSmall, title: String.pressureHPaPlaceholder)
+        let windSpeed = ActualWeatherInfoItem(image: .windSmall, title: String.windSpeedPlaceholder)
+        let windDirection = ActualWeatherInfoItem(image: .windDirectionSmall, title: String.defaultInfoPlaceholder)
 
         let emptyViewObject = ActualWeatherViewObject(weatherImage: WeatherImageType.clearSkyD.imageBig,
-                                                     locationText: " -- ",
-                                                     temperatureDescriptionText: " --",
+                                                     locationText: String.defaultInfoPlaceholder,
+                                                     temperatureDescriptionText: String.defaultInfoPlaceholder,
                                                      humity: humity,
                                                      precipitation: precipitation,
                                                      pressure: pressure,
@@ -108,7 +107,7 @@ extension ActualWeatherPresenter {
     }
     
     private func getLocationText(_ baseWeather: BaseWeather) -> String? {
-        guard let name = baseWeather.name else { return " -- " }
+        guard let name = baseWeather.name else { return String.defaultInfoPlaceholder }
         if let country = baseWeather.sysInfo?.country {
             return "\(name), \(country)"
         } else {
@@ -119,15 +118,15 @@ extension ActualWeatherPresenter {
     private func getTemperatureDescription(_ baseWeather: BaseWeather) -> String? {
         guard let temperature = baseWeather.weatherMainInfo?.temperature else { return nil }
         if let weatherDescription = baseWeather.weather?.first?.description?.capitalized {
-            return String(format: "%.0f°C | %@", temperature, weatherDescription)
+            return String(format: String.temperatureTextComplete, temperature, weatherDescription)
         } else {
-            return String(format: "%.0f°C", temperature)
+            return String(format: String.temperatureTextPartial, temperature)
         }
     }
     
     private func getHumidityInfoItem(_ baseWeather: BaseWeather) -> ActualWeatherInfoItem {
         let humitidy = baseWeather.weatherMainInfo?.humidity ?? 0.0
-        return ActualWeatherInfoItem(image: .humiditySmall, title: String(format: "%.1f%%", humitidy))
+        return ActualWeatherInfoItem(image: .humiditySmall, title: String(format: String.humidityText, humitidy))
     }
 
     private func getPrecipitationInfoItem(_ baseWeather: BaseWeather) -> ActualWeatherInfoItem {
@@ -137,21 +136,21 @@ extension ActualWeatherPresenter {
         } else if let rain1h = baseWeather.rain?.oneHour {
             precipitation = rain1h
         }
-        return ActualWeatherInfoItem(image: .precipitationSmall, title: String(format: "%.1f mm", precipitation))
+        return ActualWeatherInfoItem(image: .precipitationSmall, title: String(format: String.precepitationText, precipitation))
     }
 
     private func getPressureInfoItem(_ baseWeather: BaseWeather) -> ActualWeatherInfoItem {
         let pressure = baseWeather.weatherMainInfo?.pressure ?? 0.0
-        return ActualWeatherInfoItem(image: .pressureSmall, title: String(format: "%.0f hPa", pressure))
+        return ActualWeatherInfoItem(image: .pressureSmall, title: String(format: String.pressureText, pressure))
     }
 
     private func getWindSpeedInfoItem(_ baseWeather: BaseWeather) -> ActualWeatherInfoItem {
         let wind = baseWeather.wind?.speed ?? 0.0
-        return ActualWeatherInfoItem(image: .windSmall, title: String(format: "%.0f km/h", wind))
+        return ActualWeatherInfoItem(image: .windSmall, title: String(format: String.windSpeedText, wind))
     }
 
     private func getWindDirectionInfoItem(_ baseWeather: BaseWeather) -> ActualWeatherInfoItem {
-        let windDirection = baseWeather.wind?.direction ?? " -- "
+        let windDirection = baseWeather.wind?.direction ?? String.defaultInfoPlaceholder
         return ActualWeatherInfoItem(image: .windDirectionSmall, title: windDirection)
     }
     
