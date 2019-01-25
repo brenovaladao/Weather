@@ -1,4 +1,4 @@
-## Whether
+## Whether App
 
 ### Features
 - Actual weather information based on current location
