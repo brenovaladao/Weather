@@ -86,14 +86,9 @@ extension LocationManager {
             return
         }
 
-        // Verifying timestamp
-        // If There's no date saved, just continue. fisrt request
-        if let lastLocationUpdate = UserDefaultsUtil.getObject(forKey: lastLocationRequestDateKey) as? Date {
-            guard Date().compare(lastLocationUpdate.addingTimeInterval(lastLocationRequestTime)) == .orderedDescending else {
-                return
-            }
+        guard verifyIfCanUpdateLocationByTime() else {
+            return
         }
-        UserDefaultsUtil.setObject(Date(), forKey: lastLocationRequestDateKey)
         
         location.startUpdatingLocation()
         delegate?.startGettingNewLocation()
@@ -105,11 +100,23 @@ extension LocationManager {
 // MARK: - Private
 extension LocationManager {
     
-    func stopTrackingLocation() {
+    private func stopTrackingLocation() {
         location.stopUpdatingLocation()
         isUpdatingLocation = false
     }
     
+    private func verifyIfCanUpdateLocationByTime() -> Bool {
+        // Verifying timestamp
+        // If There's no date saved, just continue. fisrt request
+        if let lastLocationUpdate = UserDefaultsUtil.getObject(forKey: lastLocationRequestDateKey) as? Date {
+            guard Date().compare(lastLocationUpdate.addingTimeInterval(lastLocationRequestTime)) == .orderedDescending else {
+                return false
+            }
+        }
+        UserDefaultsUtil.setObject(Date(), forKey: lastLocationRequestDateKey)
+        return true
+    }
+
 }
 
 // MARK: - LocationManagerDelegate
