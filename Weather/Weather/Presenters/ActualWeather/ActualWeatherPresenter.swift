@@ -24,16 +24,29 @@ class ActualWeatherPresenter {
 
 // MARK: - Public
 extension ActualWeatherPresenter {
+    
+    public func updateActualWeatherData() {
+        if LocationManager.shared.requestLocationPermission() {
+            LocationManager.shared.requestNewLocationIfIsPossible()
+        } else {
+            actualWeatherView?.requestLocationPermissionInSettings()
+        }
+    }
+    
+}
 
-    public func getActualWeatherData() {
+// MARK: - Private
+extension ActualWeatherPresenter {
+    
+    private func getActualWeatherData() {
         
         guard !isLoadingData else { return }
-
+        
         guard let location = LocationManager.shared.currentLocation else { return }
         
         actualWeatherView?.setLoading(true)
         isLoadingData = true
-
+        
         WeatherService.getActualWeather(for: location.latitude, lon: location.longitude) { [weak self] (baseWeather, error) in
             guard let self = self else { return }
             self.isLoadingData = false
@@ -48,19 +61,6 @@ extension ActualWeatherPresenter {
             self.actualWeatherView?.bind(viewObject: viewObject)
         }
     }
-    
-    public func updateActualWeatherData() {
-        if LocationManager.shared.requestLocationPermission() {
-            LocationManager.shared.requestNewLocationIfIsPossible()
-        } else {
-            actualWeatherView?.requestLocationPermissionInSettings()
-        }
-    }
-    
-}
-
-// MARK: - Private
-extension ActualWeatherPresenter {
     
     private func createEmptyViewObject() {
         

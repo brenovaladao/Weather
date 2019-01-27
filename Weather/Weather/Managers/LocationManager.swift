@@ -131,7 +131,9 @@ extension LocationManager: CLLocationManagerDelegate {
         }
         self.currentLocation = Location(latitude: currentLocation.coordinate.latitude,
                                         longitude: currentLocation.coordinate.longitude)
-        delegate?.didReceiveNewLocation()
+        DispatchQueue.main.async {
+            self.delegate?.didReceiveNewLocation()
+        }
     }
     
 }

@@ -43,4 +43,5 @@ final class LoggerPlugin: PluginType {
             print("\n\n Error: \(error)\n")
         }
     }
+    
 }
