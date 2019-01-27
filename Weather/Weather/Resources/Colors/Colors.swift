@@ -38,7 +38,7 @@ extension UIColor {
     /// Hexa: FFCC33
     static let weatherYellow = UIColor(red: 255/255.0, green: 204/255.0, blue: 51/255.0, alpha: 1.0)
 
-    /// RGB: 215, 55, 18
+    /// RGB: 255, 55, 18
     /// Hexa: D73712
     static let weatherRed = UIColor(red: 255/255.0, green: 55/255.0, blue: 18/255.0, alpha: 1.0)
     

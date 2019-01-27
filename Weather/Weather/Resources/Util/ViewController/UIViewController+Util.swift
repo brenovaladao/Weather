@@ -68,10 +68,10 @@ extension UIViewController {
                 UIApplication.shared.open(url)
         }
     }
+    
 }
 
 // MARK: - AlertController
-
 extension UIViewController {
 
     public func alert(with title: String?, message: String? = nil, hasCancelAction: Bool = false, actionButtonTitle: String? = nil, okAction: (() -> Void)? = nil) {
