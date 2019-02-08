@@ -10,7 +10,7 @@ import UIKit
 
 class ActualWeatherPresenter {
     
-    private var actualWeatherView: ActualWeatherProtocol?
+    private weak var actualWeatherView: ActualWeatherProtocol?
     
     private var isLoadingData = false
     
