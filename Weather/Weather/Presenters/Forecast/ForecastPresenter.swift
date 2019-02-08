@@ -10,7 +10,7 @@ import Foundation
 
 class ForecastPresenter {
     
-    private var forecastView: ForecastProtocol?
+    private weak var forecastView: ForecastProtocol?
     
     private var isLoadingData = false
 
